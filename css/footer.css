@@ -3,7 +3,7 @@ footer {
     width: 100%;
     padding: 40px 10vw;
     padding-bottom: 80px;
-    background: #383838;
+    background: #ffb700;
 }
 
 .footer-content {
@@ -32,15 +32,17 @@ footer {
 
 .category-title {
     text-transform: capitalize;
-    color: white;
+    color: black;
     font-size: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .category .footer-link {
     text-decoration: none;
     text-transform: capitalize;
-    color: rgba(225, 255, 255, 0.75);
+    color: rgb(0, 0, 0);
 }
 
 .footer-link:hover {
@@ -48,14 +50,16 @@ footer {
 }
 
 .footer-title, .info {
-    color: rgba(255, 255, 255, 0.75);
+    color: black;
     margin: 20px 0;
     text-transform: capitalize;
 }
 
 .footer-title {
     margin-top: 80px;
-    color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .footer-social-container {
@@ -65,7 +69,7 @@ footer {
 }
 
 .social-link {
-    color: white;
+    color: black;
     margin-left: 20px;
     text-transform: capitalize;
 }
@@ -82,5 +86,5 @@ footer {
     bottom: 0;
     text-align: center;
     color: white;
-    background: rgb(0, 0, 0);
+    background: #ffb700;
 }

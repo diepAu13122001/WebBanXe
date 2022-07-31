@@ -10,7 +10,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: black;
+    background: #ffb700;
     z-index: 9;
     padding: 10px 10vw;
     display: flex;
@@ -49,8 +49,8 @@
     left: 8px;
     font-size: 12px;
     font-weight: 700;
-    color: white;
-    background: orange;
+    color: black;
+    background: white;
     padding: 0 5px 0 5px;
     border-radius: 30px;
 }
@@ -67,14 +67,14 @@
     padding: 0 10px;
     margin: 0 5px;
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 20px;
     transition: .5s;
     text-transform: uppercase;
 }
 
 .link:hover {
-    color: orange;
+    color: white;
 }
 
 .account-info{

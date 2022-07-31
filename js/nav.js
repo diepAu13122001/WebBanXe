@@ -2,7 +2,7 @@ const createNav = () => {
     let nav = document.querySelector('.navbar');
 
     nav.innerHTML = `
-                     <a href="index.html"> <img src="img/light-logo.png" class="brand-logo" alt=""></a>
+                     <a href="index.html"> <img src="img/dark-logo.png" class="brand-logo" alt=""></a>
         <ul class="links-container">
             <li class="link-item"><a href="index.html" class="link">Home</a></li>
             <li class="link-item"><a href="honda.html" class="link">Honda</a></li>
@@ -13,15 +13,15 @@ const createNav = () => {
         <div class="nav-items">
             <a>
                 <p id="search">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/1200px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png" alt="">
+                   <img src="https://img.icons8.com/ios-filled/60/000000/search--v1.png"/>
                 </p>
             </a>
             <a>
-                <img src="https://img.icons8.com/ios-filled/60/FFFFFF/paid-bill.png"/>
+                <img src="https://img.icons8.com/ios-filled/60/000000/paid-bill.png"/>
             </a>
             <a href="cart.html">
                 <p id="numOfChosenProduct">12+</p>
-                <img src="https://img.icons8.com/ios-glyphs/100/FFFFFF/shopping-cart--v1.png"/>
+                <img src="https://img.icons8.com/ios-glyphs/100/000000/shopping-cart--v1.png"/>
             </a>
         </div>
     `;
