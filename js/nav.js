@@ -2,30 +2,28 @@ const createNav = () => {
     let nav = document.querySelector('.navbar');
 
     nav.innerHTML = `
-             <div class="nav">
-             <a href="index.html"> <img src="img/dark-logo.png" class="brand-logo" alt=""> </a>
-                <div class="nav-items">
-                    <div class="search">
-                        <input type="text" class="search-box" placeholder="search brand, product">
-                        <button class="search-btn"> search</button>
-                    </div>
-                    <a>
-                        <img src="img/user.png" id="user-img" alt="">
-                        <div class="login-logout-popup hide">
-                            <p class="account-info">Log in as, name</p>
-                            <button class="btn" id="user-btn">Log out</button>
-                        </div>
-                        </a>
-                    <a href="cart.html"><img src="img/cart.png" alt=""></a>
-                </div>
-           </div>
-            <ul class="links-container">
-                <li class="link-item"><a href="index.html" class="link">Home</a></li>
-                <li class="link-item"><a href="honda.html" class="link">Honda</a></li>
-                <li class="link-item"><a href="suzuki.html" class="link">Suzuki</a></li>
-                <li class="link-item"><a href="yamaha.html" class="link">Yamaha</a></li>
-                <li class="link-item"><a href="aboutUs.html" class="link">About Us</a></li>
-            </ul>
+                     <a href="index.html"> <img src="img/light-logo.png" class="brand-logo" alt=""></a>
+        <ul class="links-container">
+            <li class="link-item"><a href="index.html" class="link">Home</a></li>
+            <li class="link-item"><a href="honda.html" class="link">Honda</a></li>
+            <li class="link-item"><a href="suzuki.html" class="link">Suzuki</a></li>
+            <li class="link-item"><a href="yamaha.html" class="link">Yamaha</a></li>
+            <li class="link-item"><a href="aboutUs.html" class="link">thêm</a></li>
+        </ul>
+        <div class="nav-items">
+            <a>
+                <p id="search">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/1200px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png" alt="">
+                </p>
+            </a>
+            <a>
+                <img src="https://img.icons8.com/ios-filled/60/FFFFFF/paid-bill.png"/>
+            </a>
+            <a href="cart.html">
+                <p id="numOfChosenProduct">12+</p>
+                <img src="https://img.icons8.com/ios-glyphs/100/FFFFFF/shopping-cart--v1.png"/>
+            </a>
+        </div>
     `;
 }
 

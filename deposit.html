@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>banner</title>
+    <style>
+        body {
+            background: white;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'roboto', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .first-banner {
+            background: #ffb700;
+            height: 30rem;
+            width: 100%;
+            display: flex;
+        }
+
+        .product-img {
+            height: 90%;
+            width: fit-content;
+            float: left;
+        }
+
+        .product-img img {
+            max-width: 120%;
+            height: 110%;
+        }
+
+        .product-info {
+            width: fit-content;
+            margin-top: 8%;
+        }
+
+        .product-info .for-month {
+            border-left: 10px solid black;
+            padding: 5px 10px;
+            font-size: 25px;
+        }
+
+        .product-info .product-name {
+            margin: 0 0 25px 0;
+            font-weight: 1000;
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+
+        .product-info button {
+            padding: 10px 20px;
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+
+        .product-info .view-detail {
+            background: transparent;
+        }
+
+        .product-info .view-detail:hover {
+            background: black;
+            color: white;
+        }
+
+        .brand-part {
+            margin-top: 150px;
+            width: 100%;
+            height: 300px;
+        }
+
+        .brand-part .title {
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 35px;
+            font-weight: 800;
+        }
+
+        .brand-card {
+            height: 80%;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .brand-card img{
+            cursor: pointer;
+            padding: 10px;
+            max-width: 200px;
+            max-height: 150px;
+        }
+
+        .
+
+    </style>
+</head>
+<body>
+<div class="first-banner">
+    <div class="product-img">
+<!--        <img src="img/banner/motor-banner.png" alt="">-->
+<!--        <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2021/11/Jupiter-Mat-Black-004.png" alt="">-->
+        <img src="https://cdn.honda.com.vn/motorbikes/May2022/yXVDCgQDZJcYqcCZPzyQ.png" alt="">
+    </div>
+    <div class="product-info">
+        <p class="for-month">Sản phẩm nổi bật của tháng 6</p>
+        <p class="product-name">Yamaha CB1000R 2021</p>
+        <button class="view-detail">xem chi tiết</button>
+    </div>
+</div>
+<div class="brand-part">
+    <p class="title">Các thương hiệu hợp tác</p>
+    <div class="brand-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Honda_Logo.svg/2552px-Honda_Logo.svg.png" alt="" onclick="window.open('https://www.honda.com.vn/')">
+        <img src="https://motosymbol.com/wp-content/uploads/2021/02/Yamaha-Logo.png" alt="" onclick="window.open('https://yamaha-motor.com.vn/')">
+        <img src="https://seeklogo.com/images/S/suzuki-logo-5311518DD9-seeklogo.com.png" alt="" onclick="window.open('https://suzuki.com.vn/')">
+    </div>
+</div>
+
+
+<div class="product-part">
+    <div class="menu-bar">
+        <p class="brand-name">Honda</p>
+        <p class="product-type">Xe số</p>
+        <p class="product-type">Xe tay ga</p>
+        <p class="product-type">Xe côn tay</p>
+        <p class="product-type">Xe mô tô</p>
+    </div>
+    <div class="product-list">
+<!--        cho 3 card 1 hàng-->
+        <div class="product-card">
+            <div class="product-ava">
+                <img src="" alt="">
+            </div>
+            <div class="product-name"></div>
+            <div class="product-published-price"></div>
+            <div class="product-actual-price"></div>
+        </div>
+    </div>
+</div>
+
+<div class="our-service">
+    <div class="title">Mua sắm an toàn cùng <div class="shop-name">HDD shop</div></div>
+    <div class="card-list">
+        <div class="card-service">
+            <img src="" alt="">
+            <p class="service-name"></p>
+            <p class="service-description"></p>
+        </div>
+        <div class="card-service">
+            <img src="" alt="">
+            <p class="service-name"></p>
+            <p class="service-description"></p>
+        </div>
+        <div class="card-service">
+            <img src="" alt="">
+            <p class="service-name"></p>
+            <p class="service-description"></p>
+        </div>
+    </div>
+</div>
+
+<div class="exp-form">
+    <h1 class="exp-title">đăng ký trải nghiệm sản phẩm ngay</h1>
+    <div class="cus-gender">
+        <label>
+            <input type="radio">Anh
+        </label>
+        <label>
+            <input type="radio">Chị
+        </label>
+    </div>
+    <div class="field">
+        <label>
+            <input type="text" placeholder="Họ tên">
+        </label>
+    </div>
+    <div class="field">
+        <label>
+            <input type="text" placeholder="Số điện thoại">
+        </label>
+    </div>
+    <div class="showroom-list">
+        <select name="showroom" id="showroomList">
+            <option value="a" selected>Chọn cửa hàng gần bạn nhất</option>
+            <option value="a">Cửa hàng A</option>
+            <option value="a">Cửa hàng A</option>
+            <option value="a">Cửa hàng A</option>
+            <option value="a">Cửa hàng A</option>
+            <option value="a">Cửa hàng A</option>
+        </select>
+    </div>
+    <div class="cus-note">
+        <label for="cusNote"><textarea name="cus-exp-note" id="cusNote" cols="30" rows="5"
+                                       placeholder="Lưu ý của bạn"></textarea></label>
+    </div>
+</div>
+
+<script>
+
+</script>
+</body>
+</html>
