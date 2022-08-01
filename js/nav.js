@@ -2,19 +2,15 @@ const createNav = () => {
     let nav = document.querySelector('.navbar');
 
     nav.innerHTML = `
-                     <a href="index.html"> <img src="img/dark-logo.png" class="brand-logo" alt=""></a>
+                     <a href="index.html"> <img src="../img/dark-logo.png" class="brand-logo" alt=""></a>
         <ul class="links-container">
-            <li class="link-item"><a href="index.html" class="link">Home</a></li>
-            <li class="link-item"><a href="honda.html" class="link">Honda</a></li>
-            <li class="link-item"><a href="suzuki.html" class="link">Suzuki</a></li>
-            <li class="link-item"><a href="yamaha.html" class="link">Yamaha</a></li>
-            <li class="link-item"><a href="aboutUs.html" class="link">thêm</a></li>
+            <li class="link-item"><a href="honda.html" class="link">Sản phẩm</a></li>
+            <li class="link-item"><a href="insurance.html" class="link">Chính sách bảo hành</a></li>
+            <li class="link-item"><a href="aboutUs.html" class="link">Về chúng tôi</a></li>
         </ul>
         <div class="nav-items">
             <a>
-                <p id="search">
-                   <img src="https://img.icons8.com/ios-filled/60/000000/search--v1.png"/>
-                </p>
+               <img id="search" src="https://img.icons8.com/ios-filled/60/000000/search--v1.png"/>
             </a>
             <a>
                 <img src="https://img.icons8.com/ios-filled/60/000000/paid-bill.png"/>
@@ -52,10 +48,9 @@ actionBtn.addEventListener('click', () => {
 
 
 searchBtn.addEventListener('click', () => {
-    if(searchBox.value.length){
+    if (searchBox.value.length) {
         location.href = 'search.html';
-    }
-    else{
+    } else {
         location.href = '404.html';
     }
 })

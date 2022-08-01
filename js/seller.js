@@ -84,7 +84,7 @@ function countItem() {
 
 const openBtn = document.querySelector('.open-btn');
 openBtn.addEventListener('click', () => {
-    location.href = 'product.html';
+    location.href = 'productDetail.html';
 })
 
 const editBtn = document.querySelector('.edit-btn');
