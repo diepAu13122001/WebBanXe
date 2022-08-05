@@ -164,16 +164,16 @@
 }
 
 .contact-form input[type=submit] {
-    color: white;
     font-size: 18px;
-    background: black;
+    color: black;
+    background: #ffb700;
     text-transform: uppercase;
     cursor: pointer;
 }
 
 .contact-form input[type=submit]:hover {
-    color: black;
-    background: #ffb700;
+    background: black;
+    color: white;
 }
 
 .product-image {
@@ -193,8 +193,7 @@
 
 .view-more input[type=button] {
     font-size: 18px;
-    background: black;
-    color: white;
+    background: #ffb700;
     padding: 10px 40px;
     cursor: pointer;
     outline: none;
@@ -202,7 +201,31 @@
 }
 
 .view-more input[type=button]:hover {
-    background: #ffb700;
+    background: black;
+    color: white;
 }
 
+.showroom-list {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
 
+.showroom {
+    padding: 0 10px;
+    height: 100%;
+}
+
+.showroom-name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.showroom-info {
+    font-size: 14px;
+    color: #4e4e4e;
+}
+
+.showroom-info p {
+    margin: 5px 0;
+}
