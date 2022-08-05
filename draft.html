@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>left menu</title>
+    <script src="https://kit.fontawesome.com/6743dd3fb9.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'roboto', sans-serif;
+        }
+
+        .bill {
+            margin: 10px auto;
+            padding: 10px 0;
+            width: 70%;
+            border: 2px solid #ffb700;
+        }
+
+        .item {
+            border-top: 1px solid #ffb700;
+            padding: 10px 25px;
+        }
+
+        .item:first-child {
+            border: none;
+        }
+
+        .item .prd-info .prd-ava img {
+            height: 100px;
+            margin-right: 15px;
+        }
+
+        .prd-info {
+            display: flex;
+        }
+
+        .prd-contents {
+            width: 80%;
+            margin-right: 10px;
+        }
+
+        .prd-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .prd-insurance, .prd-color {
+            font-size: 13px;
+            line-height: 25px;
+        }
+
+        .prd-insurance a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .message {
+            color: red;
+            font-size: 14px;
+            line-height: 30px;
+        }
+
+        .total .price, .total .actual-price {
+            font-size: 15px;
+            color: red;
+            text-align: right;
+            line-height: 25px;
+        }
+
+        .total .actual-price {
+            color: #797979;
+            text-decoration: line-through;
+        }
+
+        .counter {
+            display: flex;
+            margin-top: 10px;
+            margin-left: -10px;
+        }
+
+        .item-count {
+            line-height: 36px;
+            width: 40px;
+            text-align: center;
+            border: 1px solid lightgray;
+            font-size: 16px;
+        }
+
+        .counter-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid lightgray;
+            background: transparent;
+            font-weight: bolder;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .counter-btn.increment:hover, .counter-btn.decrement:hover {
+            color: #ffb700;
+            border: 1px solid #ffb700;
+        }
+
+        .counter-btn.increment {
+            color: blue;
+        }
+
+        .del {
+            color: gray;
+            text-align: center;
+            font-size: 14px;
+            margin-right: 15px;
+        }
+
+        .del i {
+            margin: 0 5px;
+        }
+
+        .prd-color-list {
+            border-radius: 10px;
+            height: 200px;
+            width: 250px;
+            overflow-y: scroll;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .prd-color-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .prd-color-list .select-color {
+            border-bottom: 1px solid lightgray;
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prd-color-list .select-color.active {
+            font-weight: 800;
+        }
+
+        .prd-color-list .select-color img {
+            width: 80px;
+            margin-right: 15px;
+        }
+
+        .prd-color-list .select-color small {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 13px;
+            color: #288ad6;
+            margin-top: -40px;
+            text-transform: capitalize;
+        }
+
+        .provisional {
+            margin: 20px 0;
+            padding: 15px 25px;
+            width: 100%;
+        }
+
+        .provisional-title, .provisional-amount {
+            font-size: 20px;
+            font-weight: bold;
+            float: left;
+        }
+
+        .provisional-amount {
+            text-align: right;
+            float: right;
+        }
+
+        .customer-info {
+            width: 100%;
+            border-top: 1px solid #ffb700;
+            padding: 15px 25px;
+            margin-top: 20px;
+        }
+
+        .cus-header, .receiving-header {
+            text-transform: uppercase;
+            font-weight: normal;
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
+        .cus-gender, .receiving-chosen {
+            margin-bottom: 10px;
+        }
+
+        .cus-gender input[type=radio], .receiving-chosen input[type=radio] {
+            margin-right: 5px;
+        }
+
+        .cus-gender label, .receiving-chosen label {
+            margin-right: 20px;
+            text-transform: capitalize;
+        }
+
+        .info-input {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .info-input input, #cus-note, .comp-info input[type=text],
+        .discount-input input[type=text], .discount-input input[type=button],
+        .order-btn button {
+            border-radius: 0;
+            border: 1px solid lightgray;
+            padding: 10px;
+            font-size: 14px;
+            outline: none;
+            width: 49%;
+        }
+
+        .receiving-method {
+            padding: 0 25px;
+        }
+
+        .address-chosen-table .for-personal, .address-chosen-table .for-showroom, .customer-info.request, .comp-info {
+            background: #f6f6f6;
+            border: 1px solid #e1e1e1;
+            padding: 15px 20px;
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        .for-personal .title, .for-showroom .title {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        #cus-address, #receiving-time {
+            width: 100%;
+            border-radius: 0;
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #e1e1e1;
+
+        }
+
+        .showroom-list {
+            margin: 5px 0;
+            height: 100px;
+            overflow-y: scroll;
+        }
+
+        .showroom-address {
+            margin: 12px 0;
+            font-size: 15px;
+            color: gray;
+            text-transform: capitalize;
+        }
+
+        .selected {
+            color: black;
+        }
+
+        .showroom-address label {
+            margin-left: 5px;
+        }
+
+        .another-request {
+            margin: auto;
+            padding: 10px 20px;
+        }
+
+        #cus-note, .comp-info input[type=text] {
+            width: 100%;
+        }
+
+        .req-list {
+            padding: 20px;
+            margin: auto;
+        }
+
+        .req {
+            margin: 10px 0;
+        }
+
+        .req label {
+            margin-left: 5px;
+        }
+
+        .customer-info.request {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .customer-info.request .cus-gender {
+            margin-top: 20px;
+        }
+
+        .comp-info input[type=text] {
+            margin: 5px 0;
+        }
+
+        .discount-input {
+            border-bottom: 1px solid #ffb700;
+            border-top: 1px solid #ffb700;
+            padding: 15px 25px;
+        }
+
+        .discount-input input {
+            margin: 10px 0;
+        }
+
+        .discount-input input[type=text] {
+            width: 85%;
+            margin-right: 10px;
+        }
+
+        .discount-input input[type=button], .order-btn button {
+            width: 12%;
+            text-align: center;
+            background: #ffb700;
+            border: 1px solid #ffb700;
+            cursor: pointer;
+        }
+
+        .discount-input input[type=button]:hover, .order-btn button:hover {
+            color: white;
+            background: black;
+            border: 1px solid black;
+        }
+
+        .discount-error {
+            color: red;
+            font-size: 12px;
+        }
+
+        .total-bill {
+            padding: 15px 25px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .total-bill .amount {
+            color: red;
+            float: right;
+        }
+
+        .order-btn {
+            padding: 15px 25px;
+        }
+
+        .order-btn button {
+            width: 100%;
+            font-weight: 550;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .guide {
+            font-size: 13px;
+            text-align: center;
+            color: gray;
+            line-height: 20px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="bill">
+    <div class="cart">
+        <div class="item">
+            <div class="prd-info">
+                <div class="prd-ava">
+                    <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-White-004.png"
+                         alt="">
+                    <div class="del"><i class="fa-solid fa-circle-xmark"></i>Xóa</div>
+                </div>
+                <div class="prd-contents">
+                    <div class="prd-name">GRANDE BLUE CORE HYBRID PHIÊN BẢN GIỚI HẠN</div>
+                    <div class="prd-insurance">Bảo hành (<a href="">Xem chi tiết</a>)</div>
+                    <div class="prd-color">
+                        <p class="content">Màu: Bạc trắng <i class="fa-solid fa-caret-down"></i></p>
+                        <div class="prd-color-list">
+                            <div class="select-color active">
+                                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-White-004.png"
+                                     alt="">
+                                <small>color name</small>
+                            </div>
+                            <div class="select-color">
+                                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-White-004.png"
+                                     alt="">
+                                <small>color name</small>
+                            </div>
+                            <div class="select-color">
+                                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-White-004.png"
+                                     alt="">
+                                <small>color name</small>
+                            </div>
+                            <div class="select-color">
+                                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-White-004.png"
+                                     alt="">
+                                <small>color name</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message">Giá, khuyến mãi đã thay đổi. Quý khách vui lòng kiểm tra lại</div>
+                </div>
+                <div class="total">
+                    <div class="price">28.290.000 đ</div>
+                    <div class="actual-price">30.990.000 đ</div>
+                    <div class="counter">
+                        <button class="counter-btn decrement">-</button>
+                        <input type="text" class="item-count" value="1">
+                        <button class="counter-btn increment">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="prd-info">
+                <div class="prd-ava">
+                    <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-White-004.png"
+                         alt="">
+                    <div class="del"><i class="fa-solid fa-circle-xmark"></i>Xóa</div>
+                </div>
+                <div class="prd-contents">
+                    <div class="prd-name">GRANDE BLUE CORE HYBRID PHIÊN BẢN GIỚI HẠN</div>
+                    <div class="prd-insurance">Bảo hành (<a href="">Xem chi tiết</a>)</div>
+                    <div class="prd-color">
+                        <p class="content">Màu: Bạc trắng <i class="fa-solid fa-caret-down"></i></p>
+                        <div class="prd-color-list">
+                            <div class="select-color active">
+                                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-White-004.png"
+                                     alt="">
+                                <small>color name</small>
+                            </div>
+                            <div class="select-color">
+                                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-White-004.png"
+                                     alt="">
+                                <small>color name</small>
+                            </div>
+                            <div class="select-color">
+                                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-White-004.png"
+                                     alt="">
+                                <small>color name</small>
+                            </div>
+                            <div class="select-color">
+                                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-White-004.png"
+                                     alt="">
+                                <small>color name</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message">Giá, khuyến mãi đã thay đổi. Quý khách vui lòng kiểm tra lại</div>
+                </div>
+                <div class="total">
+                    <div class="price">28.290.000 đ</div>
+                    <div class="actual-price">30.990.000 đ</div>
+                    <div class="counter">
+                        <button class="counter-btn decrement">-</button>
+                        <input type="text" class="item-count" value="1">
+                        <button class="counter-btn increment">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="provisional">
+            <span class="provisional-title">Tạm tính</span>
+            <span class="provisional-amount">28.290.000 đ</span>
+        </div>
+    </div>
+    <div class="customer-info">
+        <h2 class="cus-header">thông tin khách hàng</h2>
+        <div class="cus-gender">
+            <input type="radio" name="gender" id="Mr"><label for="Mr">Anh</label>
+            <input type="radio" name="gender" id="Ms"><label for="Ms">Chị</label>
+        </div>
+        <div class="info-input">
+            <input type="text" id="cus-name" placeholder="Họ và Tên">
+            <input type="text" id="cus-phoneNum" placeholder="Số điện thoại">
+        </div>
+    </div>
+    <div class="receiving-method">
+        <h2 class="receiving-header">chọn cách thức nhận hàng</h2>
+        <div class="receiving-chosen">
+            <input type="radio" name="gender" id="showroom"><label for="showroom">Giao tận nơi</label>
+            <input type="radio" name="gender" id="personal"><label for="personal">Nhận tại showroom</label>
+        </div>
+        <div class="address-chosen-table">
+            <div class="for-personal">
+                <p class="title">Chọn địa chỉ và thời gian nhận hàng</p>
+                <textarea name="" id="cus-address" cols="30" rows="5" placeholder="Nhập địa chỉ nhận hàng"></textarea>
+                <select name="" id="receiving-time">
+                    <option value="title" selected disabled>Chọn khung giờ nhận hàng</option>
+                    <option value="time1">7h-9h</option>
+                    <option value="time1">7h-9h</option>
+                    <option value="time1">7h-9h</option>
+                </select>
+            </div>
+            <div class="for-showroom">
+                <p class="title">Chọn địa chỉ showroom gần bạn nhất</p>
+                <div class="showroom-list">
+                    <div class="showroom-address selected">
+                        <input type="radio" id="1" name="address" checked><label for="1">123 Âu Cơ, phường 14, quận 11,
+                        TP.HCM</label>
+                    </div>
+                    <div class="showroom-address">
+                        <input type="radio" id="2" name="address"><label for="2">123 Âu Cơ, phường 14, quận 11,
+                        TP.HCM</label>
+                    </div>
+                    <div class="showroom-address">
+                        <input type="radio" id="3" name="address"><label for="3">123 Âu Cơ, phường 14, quận 11,
+                        TP.HCM</label>
+                    </div>
+                    <div class="showroom-address">
+                        <input type="radio" id="4" name="address"><label for="4">123 Âu Cơ, phường 14, quận 11,
+                        TP.HCM</label>
+                    </div>
+                    <div class="showroom-address">
+                        <input type="radio" id="5" name="address"><label for="5">123 Âu Cơ, phường 14, quận 11,
+                        TP.HCM</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="another-request">
+        <input type="text" name="" id="cus-note" placeholder="Yêu cầu khác (không bắt buộc)">
+        <div class="req-list">
+            <div class="req">
+                <input type="checkbox" id="req1"><label for="req1">Gọi người khác nhận hàng(nếu có)</label>
+                <div class="customer-info request">
+                    <div class="cus-gender">
+                        <input type="radio" name="gender" id="Mr-req"><label for="Mr">Anh</label>
+                        <input type="radio" name="gender" id="Ms-req"><label for="Ms">Chị</label>
+                    </div>
+                    <div class="info-input">
+                        <input type="text" id="cus-name-req" placeholder="Họ và Tên">
+                        <input type="text" id="cus-phoneNum-req" placeholder="Số điện thoại">
+                    </div>
+                </div>
+            </div>
+            <div class="req">
+                <input type="checkbox" id="req2"><label for="req2">Hướng dẫn sử dụng</label>
+            </div>
+            <div class="req">
+                <input type="checkbox" id="req3"><label for="req3">Xuất hóa đơn công ty</label>
+                <div class="comp-info">
+                    <input type="text" name="" id="comp-name" placeholder="Tên công ty">
+                    <input type="text" name="" id="comp-address" placeholder="Địa chỉ công ty">
+                    <input type="text" name="" id="comp-taxCode" placeholder="Mã số thuế">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="discount-input">
+        <span>
+            <input type="text" name="" id="discount-code" placeholder="Nhập mã giảm giá/ phiếu mua hàng">
+        </span>
+        <span>
+            <input type="button" value="Áp dụng" id="discount-btn">
+        </span>
+        <p class="discount-error">Mã giảm giá không đúng. Vui lòng kiểm tra lại.</p>
+    </div>
+    <div class="total-bill">
+        <span class="title">Tổng tiền:</span>
+        <span class="amount">28.290.000 đ</span>
+    </div>
+    <div class="order-btn">
+        <button>đặt hàng</button>
+    </div>
+    <div class="guide">Bạn có thể chọn hình thức thanh toán sau khi đặt hàng</div>
+    <div class="guide">Bằng cách đặt hàng, bạn đồng ý với Điều khoản sử dụng của HDD</div>
+</div>
+
+</body>
+</html>
