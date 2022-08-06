@@ -1,60 +1,40 @@
-const createNav = () => {
-    let nav = document.querySelector('.navbar');
+setTimeout(function () {
+    setAdNav();
+}, 300);
 
-    nav.innerHTML = `
-                     <a href="index.html"> <img src="../img/dark-logo.png" class="brand-logo" alt=""></a>
-        <ul class="links-container">
-            <li class="link-item"><a href="honda.html" class="link">Sản phẩm</a></li>
-            <li class="link-item"><a href="insurance.html" class="link">Chính sách bảo hành</a></li>
-            <li class="link-item"><a href="aboutUs.html" class="link">Về chúng tôi</a></li>
-        </ul>
-        <div class="nav-items">
-            <a>
-               <img id="search" src="https://img.icons8.com/ios-filled/60/000000/search--v1.png"/>
-            </a>
-            <a>
-                <img src="https://img.icons8.com/ios-filled/60/000000/paid-bill.png"/>
-            </a>
-            <a href="cart.html">
-                <p id="numOfChosenProduct">12+</p>
-                <img src="https://img.icons8.com/ios-glyphs/100/000000/shopping-cart--v1.png"/>
-            </a>
-        </div>
-    `;
+setTimeout(function () {
+    setNav();
+}, 300);
+
+function setAdNav() {
+    document.querySelector('.ad-navbar').innerHTML = '<a href="../index.html"> <img src="../img/dark-logo.png" class="brand-logo" alt=""></a>\n' +
+        '        <div class="nav-items">\n' +
+        '            <a>\n' +
+        '               <img id="search" src="https://img.icons8.com/ios-filled/60/000000/search--v1.png"/>\n' +
+        '            </a>\n' +
+        '            <a>\n' +
+        '                <img src="https://img.icons8.com/fluency-systems-filled/60/000000/guest-male.png"/>'+
+        '            </a>\n' +
+        '        </div>';
 }
 
-createNav();
-
-// nav popup
-const userImageButton = document.querySelector('#user-img');
-const userPop = document.querySelector('.login-logout-popup');
-const popuptext = document.querySelector('.account-info');
-const actionBtn = document.querySelector('#user-btn');
-const searchBox = document.querySelector('.search-box');
-const searchBtn = document.querySelector('.search-btn');
-const logoAction = document.querySelector('.brand-logo');
-
-userImageButton.addEventListener('click', () => {
-    userPop.classList.toggle('hide');
-})
-
-actionBtn.addEventListener('click', () => {
-    popuptext.innerHTML = 'Log in to place order';
-    actionBtn.innerHTML = 'Log in';
-    actionBtn.addEventListener('click', () => {
-        location.href = 'login.html';
-    })
-})
-
-
-searchBtn.addEventListener('click', () => {
-    if (searchBox.value.length) {
-        location.href = 'search.html';
-    } else {
-        location.href = '404.html';
-    }
-})
-
-logoAction.addEventListener('click', () => {
-    location.href = 'index.html';
-})
+function setNav() {
+    document.querySelector('.navbar').innerHTML = '<a href="../index.html"> <img src="../img/dark-logo.png" class="brand-logo" alt=""></a>\n' +
+        '        <ul class="links-container">\n' +
+        '            <li class="link-item"><a href="../html/cus_products.html" class="link">Sản phẩm</a></li>\n' +
+        '            <li class="link-item"><a href="../html/cus-insurance.html" class="link">Chính sách bảo hành</a></li>\n' +
+        '            <li class="link-item"><a href="../html/cus_aboutUs.html" class="link">Về chúng tôi</a></li>\n' +
+        '        </ul>\n' +
+        '        <div class="nav-items">\n' +
+        '            <a>\n' +
+        '               <img id="search" src="https://img.icons8.com/ios-filled/60/000000/search--v1.png"/>\n' +
+        '            </a>\n' +
+        '            <a>\n' +
+        '                <img src="https://img.icons8.com/ios-filled/60/000000/paid-bill.png"/>\n' +
+        '            </a>\n' +
+        '            <a href="../html/cus_cart.html">\n' +
+        '                <p id="numOfChosenProduct">12+</p>\n' +
+        '                <img src="https://img.icons8.com/ios-glyphs/100/000000/shopping-cart--v1.png"/>\n' +
+        '            </a>\n' +
+        '        </div>';
+}

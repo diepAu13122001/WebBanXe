@@ -110,7 +110,7 @@ addProductBtn.addEventListener('click', () => {
     if (validateForm()) { // validateForm return true or false while doing validation
         loader.style.display = 'block';
         // let data = productData ();
-        location.href = 'seller.html';
+        location.href = 'ad_seller.html';
     }
 })
 

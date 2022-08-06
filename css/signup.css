@@ -47,6 +47,11 @@ textarea{
     font-family: 'roboto', sans-serif;
 }
 
+p {
+    width: 300px;
+    text-align: center;
+}
+
 ::placeholder {
     color: #383838;
 }

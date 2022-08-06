@@ -31,7 +31,7 @@ showApplyFormBtn.addEventListener('click', () => {
             productListingElement.classList.remove('hide');
             addProductButton.addEventListener('click', () => {
                 loader.style.display = 'block';
-                location.href = 'addProduct.html';
+                location.href = 'ad_addProduct.html';
             })
         }
     })
@@ -89,5 +89,5 @@ openBtn.addEventListener('click', () => {
 
 const editBtn = document.querySelector('.edit-btn');
 editBtn.addEventListener('click', () => {
-    location.href = 'addProduct.html';
+    location.href = 'ad_addProduct.html';
 })

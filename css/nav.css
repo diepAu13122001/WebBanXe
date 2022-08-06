@@ -5,7 +5,7 @@
     font-family: 'roboto', sans-serif;
 }
 
-.navbar {
+.navbar, .ad-navbar {
     position: sticky;
     top: 0;
     left: 0;
@@ -15,7 +15,13 @@
     padding: 10px 10vw;
     display: flex;
     justify-content: space-between;
+    box-shadow: 0 4px 2px -2px rgba(255, 183, 0, 0.5);
 }
+
+.ad-navbar {
+    background: transparent;
+}
+
 
 .brand-logo {
     height: 50px;

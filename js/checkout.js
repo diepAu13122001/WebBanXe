@@ -19,7 +19,7 @@ const getAddress = () => {
     } else {
         showAlert('your order is placed', 'success');
         // return {address, street, city, state, pincode, landmark};
-        setTimeout(location.href = 'mail.html', 50000);
+        setTimeout(location.href = 'cus_thanks.html', 50000);
     }
 }
 
