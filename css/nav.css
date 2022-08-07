@@ -19,7 +19,12 @@
 }
 
 .ad-navbar {
-    background: transparent;
+    background: white;
+}
+
+.ad-navbar .nav-items {
+    width: 100%;
+    justify-content: right;
 }
 
 

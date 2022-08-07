@@ -7,8 +7,7 @@ setTimeout(function () {
 }, 300);
 
 function setAdNav() {
-    document.querySelector('.ad-navbar').innerHTML = '<a href="../index.html"> <img src="../img/dark-logo.png" class="brand-logo" alt=""></a>\n' +
-        '        <div class="nav-items">\n' +
+    document.querySelector('.ad-navbar').innerHTML = '<div class="nav-items">\n' +
         '            <a>\n' +
         '               <img id="search" src="https://img.icons8.com/ios-filled/60/000000/search--v1.png"/>\n' +
         '            </a>\n' +
