@@ -23,14 +23,16 @@
                 <a href="#">Doanh thu</a>
                 <a href="#">Nhân viên</a>
                 <a href="#">Sản phẩm</a>
+                <a href="#">Mã giảm giá</a>
                 <a href="#">Chi nhánh</a>
                 <a href="#">Trang web</a>
-                <a href="#">Tài khoản</a>
             </li>
         </ul>
     </div>
     <!--    <div class="col-sm-3" style="position: relative; z-index: -1"></div>-->
-    <div class="col-sm-9">
+    <div class="col-sm-9" style="padding-left: 0">
+        <input  class="hide" type="text" name="search" id="search-input" placeholder="Tìm kiếm...">
+        <button id="search-btn"><img src="https://img.icons8.com/ios-filled/60/000000/search--v1.png"/></button>
         <div class="data-getting">
             <button>Import file excel</button>
             <button>Export file excel</button>
@@ -70,19 +72,26 @@
             </div>
             <div class="show-data">
                 <div class="mini-menu-bar">
-                    <button class="del-all-btn">Xóa hết dữ liệu</button>
-                    <button class="del-multi-btn">Xóa nhiều</button>
-                    <button class="create-btn">Tạo mới</button>
+                    <input type="checkbox" id="select-all" name="selected">
+                    <button id="del-multi-btn">Xóa nhiều</button>
+                    <button id="create-btn">Tạo mới</button>
                 </div>
                 <div class="table-data">
                     <table>
-                        <tr>
-                            <td>email</td>
-                            <td>email</td>
-                            <td>email</td>
-                            <td>email</td>
+                        <tr id="title">
+                            <td>bll_id</td>
+                            <td>ctc_id</td>
+                            <td>bll_Qty</td>
+                            <td>bll_total</td>
+                            <td>bll_shipFee</td>
+                            <td>bll_discount</td>
+                            <td>bll_status</td>
                         </tr>
                         <tr>
+                            <td>email</td>
+                            <td>email</td>
+                            <td>email</td>
+                            <td>email</td>
                             <td>email</td>
                             <td>email</td>
                             <td>email</td>
@@ -92,8 +101,8 @@
                 </div>
             </div>
             <div class="create">
-                <form action="" name="create-product">
-                    <!--                    nhớ có cả phần content-->
+                <form action="" name="create-bill">
+                    <!--nhớ có cả phần content-->
                     <input type="text" name="create" placeholder="Tên">
                     <input type="text" name="create" placeholder="T">
                     <input type="submit" value="Submit">

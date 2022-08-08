@@ -10,9 +10,6 @@ function setAdNav() {
     document.querySelector('.ad-navbar').innerHTML = '<a href="../index.html"> <img src="../img/dark-logo.png" class="brand-logo" alt=""></a>' +
         '<div class="nav-items">\n' +
         '            <a>\n' +
-        '               <img id="search" src="https://img.icons8.com/ios-filled/60/000000/search--v1.png"/>\n' +
-        '            </a>\n' +
-        '            <a>\n' +
         '                <img src="https://img.icons8.com/fluency-systems-filled/60/000000/guest-male.png"/>'+
         '            </a>\n' +
         '        </div>';

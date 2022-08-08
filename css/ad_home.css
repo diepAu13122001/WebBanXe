@@ -43,14 +43,36 @@
     overflow-y: scroll;
 }
 
+#search-input {
+    width: 95%;
+    padding: 10px 10px;
+    border: none;
+    border-bottom: 3px solid #ffb700;
+    font-size: 15px;
+    outline: none;
+    border-radius: 0;
+}
+
+#search-btn {
+    height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 20px 0;
+}
+
+#search-btn img {
+    height: 30px;
+}
+
 .data-getting {
-    width: 100%;
     padding: 20px 0;
     font-size: 16px;
     text-align: right;
+    float: right;
 }
 
-.data-getting button {
+.data-getting button, .mini-menu-bar button  {
     margin: 0 0 0 10px;
     text-transform: capitalize;
     padding: 10px 25px;
@@ -61,7 +83,7 @@
     font-weight: bold;
 }
 
-.data-getting button:hover {
+.data-getting button:hover, .mini-menu-bar button:hover {
     color: white;
     background: black;
 }
@@ -136,10 +158,49 @@
 }
 
 .show-data {
-    margin: 10px 0;
+    margin: 10px auto;
 }
 
 .show-data .mini-menu-bar {
     display: inline-block;
     font-size: 16px;
+    width: 100%;
+}
+
+.mini-menu-bar button {
+    float: right;
+}
+
+.mini-menu-bar input[type=checkbox] {
+    margin: 10px 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #ffb700;
+    border-radius: 0;
+    outline: none;
+}
+
+.table-data {
+    margin: 20px auto;
+}
+
+.table-data table {
+    font-size: 13px;
+    max-width: 200%;
+    overflow: scroll;
+    max-height: 300px;
+}
+
+.table-data table tr {
+    padding: 5px 20px;
+    border: 1px solid lightgray;
+}
+
+.table-data table #title {
+    font-weight: 600;
+}
+
+.table-data table tr td {
+    padding: 5px 10px;
+    border-right: 1px solid lightgray;
 }
