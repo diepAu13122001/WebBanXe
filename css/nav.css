@@ -20,13 +20,13 @@
 
 .ad-navbar {
     background: white;
+    padding: 10px 40px;
 }
 
 .ad-navbar .nav-items {
     width: 100%;
     justify-content: right;
 }
-
 
 .brand-logo {
     height: 50px;
