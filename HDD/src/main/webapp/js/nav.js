@@ -7,7 +7,7 @@ setTimeout(function () {
 }, 300);
 
 function setAdNav() {
-    document.querySelector('.ad-navbar').innerHTML = '<a href="../index.html"> <img src="../img/dark-logo.png" class="brand-logo" alt=""></a>' +
+    document.querySelector('.ad-navbar').innerHTML = '<a href="../index.html"> <img src="img/dark-logo.png" class="brand-logo" alt=""></a>' +
         '<div class="nav-items">\n' +
         '            <a>\n' +
         '                <img src="https://img.icons8.com/fluency-systems-filled/60/000000/guest-male.png"/>'+
@@ -16,11 +16,11 @@ function setAdNav() {
 }
 
 function setNav() {
-    document.querySelector('.navbar').innerHTML = '<a href="../index.html"> <img src="../img/dark-logo.png" class="brand-logo" alt=""></a>\n' +
+    document.querySelector('.navbar').innerHTML = '<a href="index.jsp"> <img src="img/dark-logo.png" class="brand-logo" alt=""></a>\n' +
         '        <ul class="links-container">\n' +
-        '            <li class="link-item"><a href="helloServlet" class="link">Sản phẩm</a></li>\n' +
-        '            <li class="link-item"><a href="../html/cus-insurance.html" class="link">Chính sách bảo hành</a></li>\n' +
-        '            <li class="link-item"><a href="../html/cus_aboutUs.html" class="link">Về chúng tôi</a></li>\n' +
+        '            <li class="link-item"><a href="Products" class="link">Sản phẩm</a></li>\n' +
+        '            <li class="link-item"><a href="Insurances" class="link">Chính sách bảo hành</a></li>\n' +
+        '            <li class="link-item"><a href="AboutUs" class="link">Về chúng tôi</a></li>\n' +
         '        </ul>\n' +
         '        <div class="nav-items">\n' +
         '            <a onclick="showSearchInput()">\n' +
