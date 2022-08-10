@@ -5,7 +5,7 @@ import java.sql.*;
 public class ConnectDB {
 
     private final String serverName = "localhost";
-    private final String dbName = "webbanxe";
+    private final String dbName = "banxe";
     private final String portNumber = "3306";
     private final String userID = "root";
     private final String password = "";
