@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nav</title>
+    <link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+<nav class="navbar">
+    <a href="../index.html"> <img src="../img/dark-logo.png" class="brand-logo" alt=""></a>
+    <ul class="links-container">
+        <li class="link-item"><a href="../html/cus_products.html" class="link">Sản phẩm</a></li>
+        <li class="link-item"><a href="../html/cus-insurance.html" class="link">Chính sách bảo hành</a></li>
+        <li class="link-item"><a href="../html/cus_aboutUs.html" class="link">Về chúng tôi</a></li>
+    </ul>
+    <div class="nav-items">
+        <a onclick="searchShow()">
+            <img src="https://img.icons8.com/ios-filled/60/000000/search--v1.png"/>
+        </a>
+        <a>
+            <img src="https://img.icons8.com/ios-filled/60/000000/paid-bill.png"/>
+        </a>
+        <a href="../html/cus_cart.html">
+            <p id="numOfChosenProduct">12+</p>
+            <img src="https://img.icons8.com/ios-glyphs/100/000000/shopping-cart--v1.png"/>
+        </a>
+    </div>
+</nav>
+
+<script>
+    const linksContainerCode = "<ul class=\"links-container\">\n" +
+        "        <li class=\"link-item\"><a href=\"../html/cus_products.html\" class=\"link\">Sản phẩm</a></li>\n" +
+        "        <li class=\"link-item\"><a href=\"../html/cus-insurance.html\" class=\"link\">Chính sách bảo hành</a></li>\n" +
+        "        <li class=\"link-item\"><a href=\"../html/cus_aboutUs.html\" class=\"link\">Về chúng tôi</a></li>\n" +
+        "    </ul>";
+    const navItemsCode = "<div class=\"nav-items\">\n" +
+        "        <a onclick=\"searchShow()\">\n" +
+        "            <img src=\"https://img.icons8.com/ios-filled/60/000000/search--v1.png\"/>\n" +
+        "        </a>\n" +
+        "        <a>\n" +
+        "            <img src=\"https://img.icons8.com/ios-filled/60/000000/paid-bill.png\"/>\n" +
+        "        </a>\n" +
+        "        <a href=\"../html/cus_cart.html\">\n" +
+        "            <p id=\"numOfChosenProduct\">12+</p>\n" +
+        "            <img src=\"https://img.icons8.com/ios-glyphs/100/000000/shopping-cart--v1.png\"/>\n" +
+        "        </a>\n" +
+        "    </div>";
+    const cusSearchCode = " <div class=\"cus-search\">\n" +
+        "        <a>\n" +
+        "            <img src=\"https://img.icons8.com/ios-filled/60/000000/search--v1.png\"/>\n" +
+        "            <input type=\"text\" name=\"search-input\" placeholder=\"Nhập từ khóa...\">\n" +
+        "            <img onclick='searchHide()' id=\"del-search\" src=\"https://img.icons8.com/sf-black-filled/40/000000/x.png\"/>\n" +
+        "        </a>\n" +
+        "    </div>";
+    function searchShow() {
+        document.querySelector(".links-container").remove();
+        document.querySelector(".nav-items").remove();
+        document.querySelector(".navbar").innerHTML += cusSearchCode;
+    }
+    
+    function searchHide() {
+        document.querySelector(".cus-search").remove();
+        document.querySelector(".navbar").innerHTML += linksContainerCode + navItemsCode;
+    }
+</script>
+</body>
+</html>

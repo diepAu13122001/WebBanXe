@@ -23,8 +23,7 @@
     padding: 10px 40px;
 }
 
-.ad-navbar .nav-items {
-    width: 100%;
+.ad-navbar .nav-items, .cus-search {
     justify-content: right;
 }
 
@@ -32,7 +31,7 @@
     height: 50px;
 }
 
-.nav-items {
+.nav-items, .cus-search {
     display: flex;
     align-items: center;
 }
@@ -45,15 +44,39 @@
     color: #a9a9a9;
 }
 
-.nav-items a {
+.nav-items a, .cus-search a {
     margin-left: 20px;
     position: relative;
 }
 
-.nav-items a img {
+.nav-items a img, .cus-search a img {
     width: 30px;
     cursor: pointer;
 }
+
+.cus-search a img {
+    margin-top: 10px;
+}
+
+.cus-search a input[type=text] {
+    padding: 5px 10px;
+    font-size: 15px;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid #383838;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    position: absolute;
+    line-height: 25px;
+    top: 5px;
+    width: 800px;
+}
+
+#del-search {
+    margin-left: 800px;
+}
+
 .nav-items a #numOfChosenProduct {
     position: absolute;
     top: -5px;
