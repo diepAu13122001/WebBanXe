@@ -72,11 +72,8 @@
 </head>
 <body>
 <nav class="navbar"></nav>
-<!-- banner-->
 <div class="first-banner">
     <div class="product-img">
-        <!--        <img src="img/banner/motor-banner.png" alt="">-->
-        <!--        <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2021/11/Jupiter-Mat-Black-004.png" alt="">-->
         <img src="https://cdn.honda.com.vn/motorbikes/May2022/yXVDCgQDZJcYqcCZPzyQ.png" alt="">
     </div>
     <div class="product-info">
