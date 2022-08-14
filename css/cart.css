@@ -242,21 +242,23 @@
     margin: 5px 0;
     height: 100px;
     overflow-y: scroll;
+    display: block;
 }
 
-.showroom-address {
+.showroom-list .showroom-address {
     margin: 12px 0;
     font-size: 15px;
     color: gray;
     text-transform: capitalize;
 }
 
-.selected {
+.showroom-address.selected {
     color: black;
 }
 
-.showroom-address label {
+.showroom-list .showroom-address label {
     margin-left: 5px;
+    max-width: 90%;
 }
 
 .another-request {

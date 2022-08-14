@@ -154,6 +154,7 @@
     margin: 10px;
     padding: 10px;
     width: 100%;
+    outline: none;
 }
 
 .contact-form .form-row {
@@ -162,17 +163,13 @@
     column-gap: 10px;
 }
 
-.contact-form input[type=submit] {
-    font-size: 18px;
-    color: black;
-    background: #ffb700;
-    text-transform: uppercase;
-    cursor: pointer;
+.submit-ex-req {
+    margin: 10px 0;
+    width: 100%;
 }
 
-.contact-form input[type=submit]:hover {
-    background: black;
-    color: white;
+.submit-ex-req:hover {
+
 }
 
 .product-image {
@@ -190,7 +187,7 @@
     margin-bottom: 30px;
 }
 
-.view-more input[type=button] {
+.view-more input[type=button], .submit-ex-req {
     font-size: 18px;
     background: #ffb700;
     padding: 10px 40px;
@@ -199,32 +196,47 @@
     border: none;
 }
 
-.view-more input[type=button]:hover {
+.view-more input[type=button]:hover, .submit-ex-req:hover {
     background: black;
     color: white;
 }
 
-.showroom-list {
+.showroom-list-aboutUs {
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 20px;
 }
 
-.showroom {
+.showroom-list-aboutUs .showroom {
     padding: 0 10px;
     height: 100%;
 }
 
-.showroom-name {
+.showroom-list-aboutUs .showroom-name {
     font-weight: 600;
     font-size: 16px;
 }
 
-.showroom-info {
+.showroom-list-aboutUs .showroom-info {
     font-size: 14px;
     color: #4e4e4e;
 }
 
-.showroom-info p {
+.showroom-list-aboutUs .showroom-info p {
     margin: 5px 0;
+}
+
+.cus-gender input[type=radio], .showroom-address input[type=radio] {
+    width: auto;
+}
+
+.address-chosen-table .for-showroom {
+    background: transparent;
+    border: none;
+    padding: 0 0 0 10px;
+}
+
+.address-chosen-table .for-showroom .title {
+    margin-left: 5px;
+    padding-bottom: 5px;
 }
