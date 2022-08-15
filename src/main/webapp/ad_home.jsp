@@ -19,9 +19,14 @@
 <div class="row">
     <div class="col-sm-3">
         <ul>
-            <li class="category-l0"><a href="ad_home.jsp">Doanh thu</a> <a href="ad_nhanvien.jsp">Nhân
-						viên</a> <a href="ad_product.jsp">Sản phẩm</a> <a href="ad_discount.jsp">Mã giảm giá</a> <a
-					href="ad_chinhanh.jsp">Chi nhánh</a> <a href="ad_web.jsp">Trang web</a></li>
+            <li class="category-l0">
+                <a href="#">Doanh thu</a>
+                <a href="#">Nhân viên</a>
+                <a href="#">Sản phẩm</a>
+                <a href="#">Mã giảm giá</a>
+                <a href="#">Chi nhánh</a>
+                <a href="#">Trang web</a>
+            </li>
         </ul>
     </div>
     <!--    <div class="col-sm-3" style="position: relative; z-index: -1"></div>-->
@@ -65,37 +70,37 @@
                     </div>
                 </div>
             </div>
-				<div class="show-data">
-					<div class="mini-menu-bar">
-						<input type="checkbox" id="select-all" name="selected">
-						<button id="del-multi-btn">Xóa nhiều</button>
-						<button id="create-btn">Tạo mới</button>
-					</div>
-					<div class="table-data">
-						<table>
-							<tr id="title">
-								<td>bll_id</td>
-								<td>ctc_id</td>
-								<td>bll_Qty</td>
-								<td>bll_total</td>
-								<td>bll_shipFee</td>
-								<td>bll_discount</td>
-								<td>bll_status</td>
-							</tr>
-							<tr>
-								<td>email</td>
-								<td>email</td>
-								<td>email</td>
-								<td>email</td>
-								<td>email</td>
-								<td>email</td>
-								<td>email</td>
-								<td>email</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-				<div class="create">
+            <div class="show-data">
+                <div class="mini-menu-bar">
+                    <input type="checkbox" id="select-all" name="selected">
+                    <button id="del-multi-btn">Xóa nhiều</button>
+                    <button id="create-btn">Tạo mới</button>
+                </div>
+                <div class="table-data">
+                    <table>
+                        <tr id="title">
+                            <td>bll_id</td>
+                            <td>ctc_id</td>
+                            <td>bll_Qty</td>
+                            <td>bll_total</td>
+                            <td>bll_shipFee</td>
+                            <td>bll_discount</td>
+                            <td>bll_status</td>
+                        </tr>
+                        <tr>
+                            <td>email</td>
+                            <td>email</td>
+                            <td>email</td>
+                            <td>email</td>
+                            <td>email</td>
+                            <td>email</td>
+                            <td>email</td>
+                            <td>email</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="create">
                 <form action="" name="create-bill">
                     <!--nhớ có cả phần content-->
                     <input type="text" name="create" placeholder="Tên">
@@ -271,6 +276,6 @@
     </div>
 </div>
 
-<script src="js/nav.js"></script>
+<script src="../js/nav.js"></script>
 </body>
 </html>
