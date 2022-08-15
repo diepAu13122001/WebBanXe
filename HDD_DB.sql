@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 15, 2022 lúc 03:26 PM
+-- Thời gian đã tạo: Th8 15, 2022 lúc 03:48 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -194,44 +194,13 @@ CREATE TABLE `product` (
   `brd_id` int(10) NOT NULL,
   `tpe_id` int(10) NOT NULL,
   `prd_price` bigint(20) DEFAULT NULL,
-  `prd_discountPercent` double DEFAULT NULL
+  `prd_discountPercent` double DEFAULT NULL,
+  `prd_createdDate` date DEFAULT NULL,
+  `prd_lastEdit` timestamp NULL DEFAULT NULL,
+  `prd_status` text CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `adm_id` int(11) DEFAULT NULL,
+  `prd_quantity` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `product`
---
-
-INSERT INTO `product` (`prd_id`, `prd_name`, `prd_ava`, `brd_id`, `tpe_id`, `prd_price`, `prd_discountPercent`) VALUES
-(91, 'Air Blade 125/160', 'https://cdn.honda.com.vn/motorbikes/May2022/yXVDCgQDZJcYqcCZPzyQ.png', 1, 1, 42090000, 5),
-(92, 'Vision', 'https://cdn.honda.com.vn/motorbikes/December2020/Bf4EFMSz9Q70ZZj3BVm1.png', 1, 1, 30230182, 5),
-(93, 'Vision (Phiên bản Cá tính)', 'https://cdn.honda.com.vn/motorbikes/December2020/tvsGv5RA4cWKldDPuiXj.png', 1, 1, 30230182, 5),
-(94, 'Sh mode 125cc', 'https://cdn.honda.com.vn/motorbikes/December2021/Wd66MjGr9TIeXHOhz2Rj.png', 1, 1, 54090000, 5),
-(95, 'Lead 125cc', 'https://cdn.honda.com.vn/motorbikes/December2021/PxbOtPG619Vte84CQHPg.png', 1, 1, 39090000, 5),
-(96, 'Blade 110', 'https://cdn.honda.com.vn/motorbikes/November2020/WvWf9Ur0YzePFWfz4X6u.png', 1, 2, 18230182, 5),
-(97, 'Future 125 Fi', 'https://cdn.honda.com.vn/motorbikes/October2021/q9ElGvGXqy8Kvz4v3eJp.jpg', 1, 2, 30230182, 5),
-(98, 'Super Cub C125', 'https://cdn.honda.com.vn/motorbikes/October2021/qdGgJvma2sfdCVaSKhaQ.png', 1, 2, 85090000, 5),
-(99, 'Wave RSX Fi 110', 'https://cdn.honda.com.vn/motorbikes/November2020/xwHcEQalBMGgVI2BujfN.jpg', 1, 2, 21090000, 5),
-(100, 'Wave Alpha 110cc', 'https://cdn.honda.com.vn/motorbikes/September2020/yNDoA9HpE2BdzYjJF0LQ.jpg', 1, 2, 17090000, 5),
-(101, 'JUPITER FINN', 'https://yamaha-motor.com.vn/wp/wp-content/uploads/2022/07/Jupiter-Finn-Urban-Blue-004-300x240.png', 2, 3, 18230182, 5),
-(102, 'EXCITER', 'https://yamaha-motor.com.vn/wp/wp-content/uploads/2020/12/Exciter-155-GP-004-300x240.png', 2, 3, 44230182, 5),
-(103, 'JUPITER FI', 'https://yamaha-motor.com.vn/wp/wp-content/uploads/2020/05/Jupiter-GP-300x240.png', 2, 3, 22090000, 5),
-(104, 'SIRIUS FI', 'https://yamaha-motor.com.vn/wp/wp-content/uploads/2021/09/RC-Black-Metallic-Y-004-copy-300x240.png', 2, 3, 21090000, 5),
-(105, 'SIRIUS', 'https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/902cbf7c3925180d16ad89df59f9d225-300x240.png', 2, 3, 17090000, 5),
-(106, 'GRANDE', 'https://yamaha-motor.com.vn/wp/wp-content/uploads/2018/12/New-Grande-Pearl-White-004-300x240.png', 2, 4, 18230182, 5),
-(107, 'LATTE', 'https://yamaha-motor.com.vn/wp/wp-content/uploads/2020/05/Latte-Yamaha-300x240.png', 2, 4, 44230182, 5),
-(108, 'JANUS', 'https://yamaha-motor.com.vn/wp/wp-content/uploads/2022/04/New-Janus-Light-Blue-Metallic-SMK-004-300x240.png', 2, 4, 22090000, 5),
-(109, 'NVX', 'https://yamaha-motor.com.vn/wp/wp-content/uploads/2020/10/X30-Mat-Black-004-300x240.png', 2, 4, 21090000, 5),
-(110, 'FREEGO', 'https://yamaha-motor.com.vn/wp/wp-content/uploads/2022/04/FreeGo-Mat-Red-SMK-004-300x240.png', 2, 4, 17090000, 5),
-(111, 'Burgman Street', 'https://suzuki.com.vn/images/homepage/burgman-homepage-thumbnail.jpg', 3, 5, 48600000, 0),
-(112, 'Impulse 125 FI', 'https://suzuki.com.vn/images/homepage/impulse-homepage-thumbnail.jpg', 3, 5, 31600000, 0),
-(113, 'Bandit 150', 'https://suzuki.com.vn/images/homepage/bandit-150-homepage-thumbnail.jpg', 3, 6, 68600000, 0),
-(114, 'GSX-R150', 'https://suzuki.com.vn/images/homepage/gsx-r150-homepage-thumbnail.jpg', 3, 6, 71600000, 0),
-(115, 'Satria F150', 'https://suzuki.com.vn/images/homepage/gsx-r150-homepage-thumbnail.jpg', 3, 6, 52600000, 0),
-(116, 'GSX-S150', 'https://suzuki.com.vn/images/2022/06/gsx-s150-homepage-thumbnail.png', 3, 6, 54600000, 0),
-(117, 'Raider R150', 'https://suzuki.com.vn/images/Raider/2022/Xanh-Den-Moi.png', 3, 6, 50600000, 0),
-(118, 'Intruder 150', 'https://suzuki.com.vn/images/homepage/intruder-homepage-thumbnail.jpg', 3, 6, 78600000, 0),
-(119, 'GZ150-A', 'https://suzuki.com.vn/images/homepage/gz150-homepage-thumbnail.jpg', 3, 6, 71600000, 0),
-(120, 'GD110HU', 'https://suzuki.com.vn/images/homepage/gd110hu-2022-thumbnail.pngg', 3, 6, 27600000, 0);
 
 -- --------------------------------------------------------
 
@@ -335,21 +304,6 @@ INSERT INTO `product_type` (`tpe_id`, `brd_id`, `tpe_name`, `tpe_parentId`) VALU
 (28, 2, 'xe số', 1),
 (29, 3, 'xe ga', 3),
 (30, 3, 'xe côn tay', 4);
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `product_upload`
---
-
-CREATE TABLE `product_upload` (
-  `prd_id` int(11) NOT NULL,
-  `upl_status` tinytext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `upl_createdDate` date DEFAULT NULL,
-  `upl_lastEdit` timestamp NULL DEFAULT NULL,
-  `adm_id` int(11) NOT NULL,
-  `upl_quantity` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -477,7 +431,8 @@ ALTER TABLE `experience_request`
 ALTER TABLE `product`
   ADD PRIMARY KEY (`prd_id`),
   ADD KEY `prd_fk1` (`brd_id`),
-  ADD KEY `prd_fk2` (`tpe_id`);
+  ADD KEY `prd_fk2` (`tpe_id`),
+  ADD KEY `prd_fk3` (`adm_id`);
 
 --
 -- Chỉ mục cho bảng `product_brand`
@@ -503,13 +458,6 @@ ALTER TABLE `product_detail`
 ALTER TABLE `product_type`
   ADD PRIMARY KEY (`tpe_id`),
   ADD KEY `tpe_fk1` (`brd_id`);
-
---
--- Chỉ mục cho bảng `product_upload`
---
-ALTER TABLE `product_upload`
-  ADD KEY `upl_fk1` (`adm_id`),
-  ADD KEY `upl_fk2` (`prd_id`);
 
 --
 -- Chỉ mục cho bảng `showroom`
@@ -667,7 +615,9 @@ ALTER TABLE `experience_request`
 -- Các ràng buộc cho bảng `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `prd_fk1` FOREIGN KEY (`brd_id`) REFERENCES `product_brand` (`brd_id`);
+  ADD CONSTRAINT `prd_fk1` FOREIGN KEY (`brd_id`) REFERENCES `product_brand` (`brd_id`),
+  ADD CONSTRAINT `prd_fk2` FOREIGN KEY (`tpe_id`) REFERENCES `product_type` (`tpe_id`),
+  ADD CONSTRAINT `prd_fk3` FOREIGN KEY (`adm_id`) REFERENCES `admin` (`adm_id`);
 
 --
 -- Các ràng buộc cho bảng `product_color`
@@ -686,13 +636,6 @@ ALTER TABLE `product_detail`
 --
 ALTER TABLE `product_type`
   ADD CONSTRAINT `tpe_fk1` FOREIGN KEY (`brd_id`) REFERENCES `product_brand` (`brd_id`);
-
---
--- Các ràng buộc cho bảng `product_upload`
---
-ALTER TABLE `product_upload`
-  ADD CONSTRAINT `upl_fk1` FOREIGN KEY (`adm_id`) REFERENCES `admin` (`adm_id`),
-  ADD CONSTRAINT `upl_fk2` FOREIGN KEY (`prd_id`) REFERENCES `product` (`prd_id`);
 
 --
 -- Các ràng buộc cho bảng `warranty_request`
