@@ -2,6 +2,7 @@ package Entity;
 
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +15,13 @@ public class Bill {
     private String bll_status;
     private java.sql.Date bll_createdDate;
     private java.sql.Date bll_updatedDate;
+    private Timestamp bll_paidDate;
     private int adm_id;
     private int bll_depositAmount;
     private int ctc_id;
     private List<double[]> productList; // include: product discount (double), product amount(int), product id (int)
 
-    public Bill(int bll_id, int bll_totalProductVal, int bll_deliveryFee, int bll_discountAmount, int bll_numOfPrd, String bll_status, Date bll_createdDate, Date bll_updatedDate, int adm_id, int bll_depositAmount, int ctc_id, List<double[]> productList) {
+    public Bill(int bll_id, int bll_totalProductVal, int bll_deliveryFee, int bll_discountAmount, int bll_numOfPrd, String bll_status, Date bll_createdDate, Date bll_updatedDate, Timestamp bll_paidDate, int adm_id, int bll_depositAmount, int ctc_id, List<double[]> productList) {
         this.bll_id = bll_id;
         this.bll_totalProductVal = bll_totalProductVal;
         this.bll_deliveryFee = bll_deliveryFee;
@@ -28,18 +30,11 @@ public class Bill {
         this.bll_status = bll_status;
         this.bll_createdDate = bll_createdDate;
         this.bll_updatedDate = bll_updatedDate;
+        this.bll_paidDate = bll_paidDate;
         this.adm_id = adm_id;
         this.bll_depositAmount = bll_depositAmount;
         this.ctc_id = ctc_id;
         this.productList = productList;
-    }
-
-    public int getAdm_id() {
-        return adm_id;
-    }
-
-    public void setAdm_id(int adm_id) {
-        this.adm_id = adm_id;
     }
 
     public Bill() {
@@ -109,6 +104,22 @@ public class Bill {
         this.bll_updatedDate = bll_updatedDate;
     }
 
+    public Timestamp getBll_paidDate() {
+        return bll_paidDate;
+    }
+
+    public void setBll_paidDate(Timestamp bll_paidDate) {
+        this.bll_paidDate = bll_paidDate;
+    }
+
+    public int getAdm_id() {
+        return adm_id;
+    }
+
+    public void setAdm_id(int adm_id) {
+        this.adm_id = adm_id;
+    }
+
     public int getBll_depositAmount() {
         return bll_depositAmount;
     }
@@ -159,28 +170,5 @@ public class Bill {
                 ", ctc_id=" + ctc_id +
                 ", productList=" + printProductList() +
                 '}';
-    }
-
-    public static void main(String[] args) {
-        java.util.Date utilDate = new java.util.Date();
-        double a = 12.3;
-        int b = (int) a;
-        System.out.println(b);
-        List<double[]> productList = new ArrayList<>();
-        productList.add(new double[]{2.1, 4, 5});
-        productList.add(new double[]{2.4, 1, 3});
-        productList.add(new double[]{2.2, 5, 4});
-        productList.add(new double[]{1.1, 3, 1});
-        productList.add(new double[]{0.1, 1, 2});
-        Bill bill = new Bill(1, 12343232, 324324, 453543, 23, "da hoan thanh", new Date(utilDate.getTime()), new Date(new java.util.Date(2022, 3, 1).getTime()), 1, 2313213, 1, productList);
-        System.out.println(bill.toString());
-
-
-//        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-//        System.out.println("utilDate:" + utilDate);
-//        System.out.println("sqlDate:" + sqlDate);
-//        Time sqlTime = new Time(Calendar.getInstance().getTime().getTime());
-//        System.out.println(sqlTime);
-
     }
 }

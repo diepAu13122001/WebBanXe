@@ -35,8 +35,8 @@ public class TimeConvert {
 //        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
 //        System.out.println("utilDate:" + utilDate);
 //        System.out.println("sqlDate:" + sqlDate);
-//        Time sqlTime = new Time(Calendar.getInstance().getTime().getTime());
-//        System.out.println(sqlTime);
+        Time sqlTime = new Time(Calendar.getInstance().getTime().getTime());
+        System.out.println(sqlTime);
     }
 
 }

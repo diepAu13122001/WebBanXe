@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Admin home</title>
-    <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/brand.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/ad_home.css">
@@ -12,7 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav class="ad-navbar"></nav>
+<jsp:include page="jsp/adNav.jsp"/>
 <div class="my-alert">
 
 </div>
@@ -276,6 +275,5 @@
     </div>
 </div>
 
-<script src="../js/nav.js"></script>
 </body>
 </html>

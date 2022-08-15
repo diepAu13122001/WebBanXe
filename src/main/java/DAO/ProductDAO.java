@@ -25,7 +25,14 @@ public class ProductDAO {
                         rs.getInt(4),
                         rs.getInt(5),
                         rs.getInt(6),
-                        rs.getDouble(7)));
+                        rs.getDouble(7),
+                        rs.getDate(8),
+                        rs.getTimestamp(9),
+                        getColorListByPrdId(rs.getInt(1)),
+                        rs.getString(10),
+                        rs.getInt(11),
+                        rs.getInt(12),
+                        getDetailListByPrdId(rs.getInt(1))));
             }
         }catch (Exception e) {
             System.out.println(e);
@@ -33,51 +40,63 @@ public class ProductDAO {
         return list;
     }
 
-    public List<ProductDetail> getDetailByPrdId (String id) {
-        List<ProductDetail> list = new ArrayList<>();
-        String query = "select * from product_detail where prd_id=\""+id+"\";";
-        try {
-            conn = new ConnectDB().getConnection();
-            ps = conn.prepareStatement(query);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                ProductDetail productDetail = new ProductDetail();
-                productDetail.setPrd_id(rs.getString(1));
-                productDetail.setPrd_content(rs.getString(2));
-                if (rs.getInt(3)==1) {
-                    productDetail.setPrd_contentIsImage(false);
-                }else {
-                    productDetail.setPrd_contentIsImage(true);
-                }
-                list.add(productDetail);
-            }
-        }catch (Exception e) {
-            System.out.println(e);
-        }
+    public List<String[]> getColorListByPrdId (int prd_id) {
+        List<String[]> list = new ArrayList<>();
+        String query = "select * from product_color where prd_id = ?;";
         return list;
     }
 
-    public List<Product> getNewestProducts (int limit) {
-        List<Product> list = new ArrayList<>();
-        String query = "select * from product;";
-        try {
-            conn = new ConnectDB().getConnection();
-            ps = conn.prepareStatement(query);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                list.add(new Product(rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getInt(4),
-                        rs.getInt(5),
-                        rs.getInt(6),
-                        rs.getDouble(7)));
-            }
-        }catch (Exception e) {
-            System.out.println(e);
-        }
+    public List<String[]> getDetailListByPrdId (int prd_id) {
+        List<String[]> list = new ArrayList<>();
+
         return list;
     }
+
+//    public List<ProductDetail> getDetailByPrdId (String id) {
+//        List<ProductDetail> list = new ArrayList<>();
+//        String query = "select * from product_detail where prd_id=\""+id+"\";";
+//        try {
+//            conn = new ConnectDB().getConnection();
+//            ps = conn.prepareStatement(query);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                ProductDetail productDetail = new ProductDetail();
+//                productDetail.setPrd_id(rs.getString(1));
+//                productDetail.setPrd_content(rs.getString(2));
+//                if (rs.getInt(3)==1) {
+//                    productDetail.setPrd_contentIsImage(false);
+//                }else {
+//                    productDetail.setPrd_contentIsImage(true);
+//                }
+//                list.add(productDetail);
+//            }
+//        }catch (Exception e) {
+//            System.out.println(e);
+//        }
+//        return list;
+//    }
+//
+//    public List<Product> getNewestProducts (int limit) {
+//        List<Product> list = new ArrayList<>();
+//        String query = "select * from product;";
+//        try {
+//            conn = new ConnectDB().getConnection();
+//            ps = conn.prepareStatement(query);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                list.add(new Product(rs.getInt(1),
+//                        rs.getString(2),
+//                        rs.getString(3),
+//                        rs.getInt(4),
+//                        rs.getInt(5),
+//                        rs.getInt(6),
+//                        rs.getDouble(7)));
+//            }
+//        }catch (Exception e) {
+//            System.out.println(e);
+//        }
+//        return list;
+//    }
 
     public Product getMostPopPrd () {
         Product popPrd = new Product();
@@ -110,10 +129,14 @@ public class ProductDAO {
     public static void main(String[] args) {
         ProductDAO dao = new ProductDAO();
 
-        System.out.println(dao.getMostPopPrd().toString());
+        for (Product prd: dao.getAllProduct()) {
+            System.out.println(prd.toString());
+        }
 
-        Long datetime = System.currentTimeMillis();
-        Timestamp timestamp = new Timestamp(datetime);
-        System.out.println("Current Time Stamp: "+timestamp);
+//        System.out.println(dao.getMostPopPrd().toString());
+//
+//        Long datetime = System.currentTimeMillis();
+//        Timestamp timestamp = new Timestamp(datetime);
+//        System.out.println("Current Time Stamp: "+timestamp);
     }
 }
