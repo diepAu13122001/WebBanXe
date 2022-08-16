@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: DELL
@@ -118,104 +119,17 @@
 <section class="product">
     <div class="product-container">
         <div class="showroom-list-aboutUs">
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
+            <jsp:useBean id="allShowroom" scope="request" type="java.util.List"/>
+            <c:forEach var="shr" items="${allShowroom}">
+                <div class="showroom">
+                    <div class="showroom-name">${shr.shr_name}</div>
+                    <div class="showroom-info">
+                        <p>Địa chỉ: ${shr.shr_address}</p>
+                        <p>Hotline: ${shr.shr_phoneNum}</p>
+                        <p>Giờ mở cửa: ${shr.shr_openTime} - ${shr.shr_closeTime}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: Tòa C Tầng 12, Toà Hồ Gươm Plaza, Số 102 Trần Phú, Phường Mộ Lao, Quận Hà Đông</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 </section>

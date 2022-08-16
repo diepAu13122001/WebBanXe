@@ -134,3 +134,9 @@
     opacity: 0;
     pointer-events: none;
 }
+
+form button[type=submit] {
+    background: transparent;
+    border: none;
+    outline: none;
+}

@@ -10,7 +10,8 @@ public class ConnectDB {
 
     public Connection getConnection() throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
-        String url = "jdbc:mysql://" + serverName + ":" + portNumber + "/" + dbName;
+        String url = "jdbc:mysql://" + serverName + ":" + portNumber + "/" + dbName ;
+
         return DriverManager.getConnection(url, userID, password);
     }
 

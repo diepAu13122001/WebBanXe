@@ -15,12 +15,12 @@ public class Product {
     private Date prd_createdDate;
     private Timestamp prd_lastEdit;
     private List<String[]> colorList;
-    private String prd_status;
     private int adm_id;
     private int prd_quantity;
     private List<String[]> prd_details;
+    private int prd_soldPrice;
 
-    public Product(int prd_id, String prd_name, String prd_ava, int brd_id, int tpe_id, int prd_price, double prd_discountPercent, Date prd_createdDate, Timestamp prd_lastEdit, List<String[]> colorList, String prd_status, int adm_id, int prd_quantity, List<String[]> prd_details) {
+    public Product(int prd_id, String prd_name, String prd_ava, int brd_id, int tpe_id, int prd_price, double prd_discountPercent, Date prd_createdDate, Timestamp prd_lastEdit, List<String[]> colorList, int adm_id, int prd_quantity, List<String[]> prd_details) {
         this.prd_id = prd_id;
         this.prd_name = prd_name;
         this.prd_ava = prd_ava;
@@ -31,13 +31,21 @@ public class Product {
         this.prd_createdDate = prd_createdDate;
         this.prd_lastEdit = prd_lastEdit;
         this.colorList = colorList;
-        this.prd_status = prd_status;
         this.adm_id = adm_id;
         this.prd_quantity = prd_quantity;
         this.prd_details = prd_details;
+        this.prd_soldPrice = (int) (this.prd_price * (100 - this.prd_discountPercent));
     }
 
     public Product() {
+    }
+
+    public int getPrd_soldPrice() {
+        return prd_soldPrice;
+    }
+
+    public void setPrd_soldPrice(int prd_soldPrice) {
+        this.prd_soldPrice = prd_soldPrice;
     }
 
     public List<String[]> getPrd_details() {
@@ -128,14 +136,6 @@ public class Product {
         this.colorList = colorList;
     }
 
-    public String getPrd_status() {
-        return prd_status;
-    }
-
-    public void setPrd_status(String prd_status) {
-        this.prd_status = prd_status;
-    }
-
     public int getAdm_id() {
         return adm_id;
     }
@@ -165,7 +165,6 @@ public class Product {
                 ", prd_createdDate=" + prd_createdDate +
                 ", prd_lastEdit=" + prd_lastEdit +
                 ", colorList=" + colorList +
-                ", prd_status='" + prd_status + '\'' +
                 ", adm_id=" + adm_id +
                 ", prd_quantity=" + prd_quantity +
                 '}';

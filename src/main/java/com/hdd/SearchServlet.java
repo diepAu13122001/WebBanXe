@@ -11,28 +11,31 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ProductsServlet", value = "/Products")
-public class ProductsServlet extends HttpServlet {
+@WebServlet(name = "SearchServlet", value = "/Search")
+public class SearchServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
 
+        String search =request.getParameter("search");
+        String tpe_id = request.getParameter("tpe_id");
+
         ProductDAO productDAO = new ProductDAO();
         List<Product> productList = productDAO.getAllProduct();
         List<ProductBrand> allBrand = productDAO.getAllBrand();
         List<ProductType> parentTpeList = productDAO.getParentTpeList();
-        String tpe_id = request.getParameter("tpe_id");
+        String getTitle = "Kết quả tìm kiếm '"+ search + "'";
         List<ProductType> typeListByParentId = productDAO.getTpeListByParentId(tpe_id);
-        String getTitle = "Tất cả sản phẩm";
 
-        request.setAttribute("allProduct", productList);
+
         request.setAttribute("allBrand", allBrand);
         request.setAttribute("parentTpeList", parentTpeList);
         request.setAttribute("typeListByParentId", typeListByParentId);
+        request.setAttribute("allProduct", productList);
         request.setAttribute("getTitle", getTitle);
 
-        request.getRequestDispatcher("cus_products.jsp").forward(request,response);
+        request.getRequestDispatcher("cus_products.jsp").forward(request, response);
     }
 
     @Override

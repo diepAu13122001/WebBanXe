@@ -1,5 +1,7 @@
 package Entity;
 
+import DAO.ProductDAO;
+
 public class ProductType {
     private int tpe_id;
     private int brd_id;
@@ -57,4 +59,5 @@ public class ProductType {
                 ", tpe_parentId=" + tpe_parentId +
                 '}';
     }
+
 }

@@ -1,6 +1,8 @@
 package Entity;
 
-public class ProductBrand {
+import java.io.Serializable;
+
+public class ProductBrand implements Serializable {
     private int brd_id;
     private String brd_name;
     private String brd_logo;
@@ -8,11 +10,11 @@ public class ProductBrand {
     private String brd_address;
     private String brd_webAddress;
 
-    public ProductBrand(int brd_id, String brd_name, String brd_logo, String brd_phoneNum, String brd_address, String brd_webAddress) {
+    public ProductBrand(int brd_id, String brd_name, String brd_logo, String brdPhoneNum, String brd_address, String brd_webAddress) {
         this.brd_id = brd_id;
         this.brd_name = brd_name;
         this.brd_logo = brd_logo;
-        this.brd_phoneNum = brd_phoneNum;
+        this.brd_phoneNum = brdPhoneNum;
         this.brd_address = brd_address;
         this.brd_webAddress = brd_webAddress;
     }
@@ -32,8 +34,8 @@ public class ProductBrand {
         return brd_name;
     }
 
-    public void setBrd_name(String brd_name) {
-        this.brd_name = brd_name;
+    public void setBrd_name(String brdName) {
+        this.brd_name = brdName;
     }
 
     public String getBrd_logo() {

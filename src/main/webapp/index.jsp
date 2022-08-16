@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: DELL
-  Date: 8/12/2022
-  Time: 10:57 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -83,14 +77,18 @@
 <!-- banner-->
 <div class="first-banner">
     <div class="product-img">
-        <!--        <img src="img/banner/motor-banner.png" alt="">-->
-        <!--        <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2021/11/Jupiter-Mat-Black-004.png" alt="">-->
-        <img src="https://cdn.honda.com.vn/motorbikes/May2022/yXVDCgQDZJcYqcCZPzyQ.png" alt="">
+        <jsp:useBean id="mostPopPrd" scope="request" type="Entity.Product"/>
+        <img src="<c:out value="${mostPopPrd.prd_ava}"/>" alt="<c:out value="${mostPopPrd.prd_name}"/>">
     </div>
     <div class="product-info">
-        <p class="for-month">Sản phẩm nổi bật của tháng 6</p>
-        <p class="product-name">Yamaha CB1000R 2021</p>
-        <button class="view-detail">xem chi tiết</button>
+        <p class="for-month">Sản phẩm nổi bật</p>
+        <p class="product-name">
+            <jsp:useBean id="brdOfMostPopPrd" scope="request" type="java.lang.String"/>
+            <c:out value="${brdOfMostPopPrd}"/> <c:out value="${mostPopPrd.prd_name}"/></p>
+        <button class="view-detail"
+                onclick="window.location = '${pageContext.request.contextPath}/Product?prd_id=${mostPopPrd.prd_id}'">xem chi
+            tiết
+        </button>
     </div>
 </div>
 
@@ -98,87 +96,36 @@
 <section class="product">
     <h2 class="product-category">HÀNG MỚI VỀ</h2>
     <div class="product-container">
-        <div class="product-card">
-            <div class="product-image">
-                <span class="discount-tag">5% off</span>
-                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-Orange-004.png"
-                     class="product-thumb" alt="">
-                <button class="card-btn">view detail</button>
+        <jsp:useBean id="newestList" scope="request" type="java.util.List"/>
+        <c:forEach items="${newestList}" var="item">
+            <div class="product-card">
+                <div class="product-image">
+                    <c:if test="${item.prd_discountPercent > 0}">
+                        <span class="discount-tag">Giảm ${item.prd_discountPercent}%</span>
+                    </c:if>
+                    <img src="${item.prd_ava}" class="product-thumb" alt="">
+                    <button class="card-btn"
+                            onclick="window.location = '${pageContext.request.contextPath}/Product?prd_id=${item.prd_id}'">
+                        Xem chi tiết
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">${item.prd_name}</h2>
+                    <c:choose>
+                        <c:when test="${item.prd_discountPercent == 0}">
+                            <span class="price">${item.prd_price}đ</span>
+                        </c:when>
+                        <c:otherwise>
+                            <span class="price">${item.prd_soldPrice}đ<span
+                                    class="actual-price">${item.prd_price}đ</span></span>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
             </div>
-            <div class="product-info">
-                <h2 class="product-brand">Winner X</h2>
-                <!--                <p class="product-short-des">a short line about the cloth...</p>-->
-                <span class="price">46.635.500<span class="actual-price">49.090.000</span></span>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <span class="discount-tag">5% off</span>
-                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-Orange-004.png"
-                     class="product-thumb" alt="">
-                <button class="card-btn">view detail</button>
-            </div>
-            <div class="product-info">
-                <h2 class="product-brand">Winner X</h2>
-                <!--                <p class="product-short-des">a short line about the cloth...</p>-->
-                <span class="price">46.635.500<span class="actual-price">49.090.000</span></span>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <span class="discount-tag">5% off</span>
-                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-Orange-004.png"
-                     class="product-thumb" alt="">
-                <button class="card-btn">view detail</button>
-            </div>
-            <div class="product-info">
-                <h2 class="product-brand">Winner X</h2>
-                <!--                <p class="product-short-des">a short line about the cloth...</p>-->
-                <span class="price">46.635.500<span class="actual-price">49.090.000</span></span>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <span class="discount-tag">5% off</span>
-                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-Orange-004.png"
-                     class="product-thumb" alt="">
-                <button class="card-btn">view detail</button>
-            </div>
-            <div class="product-info">
-                <h2 class="product-brand">Winner X</h2>
-                <!--                <p class="product-short-des">a short line about the cloth...</p>-->
-                <span class="price">46.635.500<span class="actual-price">49.090.000</span></span>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <span class="discount-tag">5% off</span>
-                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-Orange-004.png"
-                     class="product-thumb" alt="">
-                <button class="card-btn">view detail</button>
-            </div>
-            <div class="product-info">
-                <h2 class="product-brand">Winner X</h2>
-                <!--                <p class="product-short-des">a short line about the cloth...</p>-->
-                <span class="price">46.635.500<span class="actual-price">49.090.000</span></span>
-            </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image">
-                <span class="discount-tag">5% off</span>
-                <img src="https://yamaha-motor.com.vn/wp/wp-content/uploads/2019/05/New-Grande-Mat-Orange-004.png"
-                     class="product-thumb" alt="">
-                <button class="card-btn">view detail</button>
-            </div>
-            <div class="product-info">
-                <h2 class="product-brand">Winner X</h2>
-                <!--                <p class="product-short-des">a short line about the cloth...</p>-->
-                <span class="price">46.635.500<span class="actual-price">49.090.000</span></span>
-            </div>
-        </div>
+        </c:forEach>
     </div>
     <div class="view-more">
-        <input type="button" value="Xem thêm">
+        <input type="button" value="Xem thêm" onclick="window.location = '${pageContext.request.contextPath}/Products'">
     </div>
 </section>
 
@@ -186,13 +133,12 @@
 <section class="product" style="background: #ffb700">
     <h2 class="product-category">NHÃN HÀNG HỢP TÁC</h2>
     <div class="product-container">
-        <img class="brand-logo"
-             src="https://brademar.com/wp-content/uploads/2022/05/Yamaha-Logo-PNG-1998-%E2%80%93-Now.png" alt="">
-        <img class="brand-logo"
-             src="https://brademar.com/wp-content/uploads/2022/05/Suzuki-Logo-PNG-1958-%E2%80%93-Now-3.png" alt="">
-        <img class="brand-logo"
-             src="https://orange-county-delamomotorsports.powersportsx.com/wp-content/uploads/sites/49/2019/05/honda.png"
-             alt="">
+        <jsp:useBean id="allBrand" scope="request" type="java.util.List"/>
+        <c:forEach var="brd" items="${allBrand}">
+            <a href="${brd.brd_webAddress}">
+                <img class="brand-logo" src="${brd.brd_logo}" alt="${brd.brd_name}">
+            </a>
+        </c:forEach>
     </div>
 </section>
 
@@ -246,34 +192,32 @@
             <div class="address-chosen-table">
                 <div class="for-showroom">
                     <p class="title">Chọn địa chỉ showroom gần bạn nhất</p>
-
                     <div class="showroom-list" style="display: block;">
-                        <div class="showroom-address selected">
-                            <input type="radio" id="1" name="address" checked><label for="1">123 Âu Cơ, phường 14, quận 11,
-                            TP.HCM</label>
-                        </div>
-                        <div class="showroom-address">
-                            <input type="radio" id="2" name="address"><label for="2">123 Âu Cơ, phường 14, quận 11,
-                            TP.HCM</label>
-                        </div>
-                        <div class="showroom-address">
-                            <input type="radio" id="3" name="address"><label for="3">123 Âu Cơ, phường 14, quận 11,
-                            TP.HCM</label>
-                        </div>
-                        <div class="showroom-address">
-                            <input type="radio" id="4" name="address"><label for="4">123 Âu Cơ, phường 14, quận 11,
-                            TP.HCM</label>
-                        </div>
-                        <div class="showroom-address">
-                            <input type="radio" id="5" name="address"><label for="5">123 Âu Cơ, phường 14, quận 11,
-                            TP.HCM</label>
-                        </div>
+                        <jsp:useBean id="allShowroom" scope="request" type="java.util.List"/>
+                        <c:forEach items="${allShowroom}" var="shr">
+                            <c:choose>
+                                <c:when test="${allShowroom.indexOf(shr) == 0}">
+                                    <div class="showroom-address selected">
+                                        <input type="radio" id="${shr.shr_id}" name="address" checked>
+                                        <label for="${shr.shr_id}">${shr.shr_address}</label>
+                                    </div>
+                                </c:when>
+                                <c:otherwise>
+                                    <div class="showroom-address">
+                                        <input type="radio" id="${shr.shr_id}" name="address">
+                                        <label for="${shr.shr_id}">${shr.shr_address}</label>
+                                    </div>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
-            <textarea name="mes" id="contact-mes" cols="30" rows="5" placeholder="Lưu ý của bạn (nhu cầu xem, yêu cầu về người tư vấn, ...)"></textarea>
+            <textarea name="mes" id="contact-mes" cols="30" rows="5"
+                      placeholder="Lưu ý của bạn (nhu cầu xem, yêu cầu về người tư vấn, ...)"></textarea>
         </form>
-        <input class="submit-ex-req" type="submit" value="ĐĂNG KÝ NGAY" style="grid-column-start: 1; grid-column-end: 3">
+        <input class="submit-ex-req" type="submit" value="ĐĂNG KÝ NGAY"
+               style="grid-column-start: 1; grid-column-end: 3">
     </div>
 </section>
 
@@ -281,104 +225,16 @@
 <section class="product">
     <div class="product-container">
         <div class="showroom-list-aboutUs">
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
+            <c:forEach var="shr" items="${allShowroom}">
+                <div class="showroom">
+                    <div class="showroom-name">${shr.shr_name}</div>
+                    <div class="showroom-info">
+                        <p>Địa chỉ: ${shr.shr_address}</p>
+                        <p>Hotline: ${shr.shr_phoneNum}</p>
+                        <p>Giờ mở cửa: ${shr.shr_openTime} - ${shr.shr_closeTime}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: Tòa C Tầng 12, Toà Hồ Gươm Plaza, Số 102 Trần Phú, Phường Mộ Lao, Quận Hà Đông</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
-            <div class="showroom">
-                <div class="showroom-name">HN - 03 Lương Yên</div>
-                <div class="showroom-info">
-                    <p>Địa chỉ: CenX Sun Acora, Tầng 4, Toà nhà Sun Plaza Ancora, Số 3 Lương Yên, Phường Bạch Đằng, Quận
-                        Hai Bà Trưng, Hà Nội</p>
-                    <p>Hotline: 02477705666</p>
-                    <p>Giờ mở cửa: 8h - 16h30</p>
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 </section>

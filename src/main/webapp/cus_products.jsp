@@ -1,3 +1,5 @@
+<%@ page import="DAO.ProductDAO" %>
+<%@ page import="Entity.ProductType" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -69,48 +71,43 @@
     </a>
 </div>
 
-<h2 class="search-title">Honda</h2>
+<h2 class="search-title">
+    <jsp:useBean id="getTitle" scope="request" type="java.lang.String"/>
+    <c:out value="${getTitle}"/></h2>
 <div class="row">
     <!--left filter-->
     <div class="col-sm-3" style="height: 100%; ">
         <div class="left-menu">
             <div class="category-list">
-                <ul>
-                    <li class="category-l0">
-                        <a href="#">honda
-                            <i class="fa-solid fa-plus"></i>
-                            <i class="fa-solid fa-minus"></i>
-                        </a>
-                        <ul class="hide">
-                            <li class="category-l1">
-                                <a href="#">honda 1<i class="fa-solid fa-plus"></i></a>
-                                <ul>
-                                    <li class="category-l2">
-                                        <a href="#">honda 1.1<i class="fa-solid fa-plus"></i></a>
-                                        <ul>
-                                            <li class="category-l3"><a href="#">honda 1.1.1</a></li>
-                                            <li class="category-l3"><a href="#">honda 1.1.2</a></li>
-                                            <li class="category-l3"><a href="#">honda 1.1.3</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="category-l2"><a href="#">honda 1.2</a></li>
-                                    <li class="category-l2"><a href="#">honda 1.3</a></li>
-                                </ul>
-                            </li>
-                            <li class="category-l1"><a href="#">honda 2</a></li>
-                            <li class="category-l1">
-                                <a href="#">honda 3</a>
-                                <ul>
-                                    <li class="category-l2"><a href="#">honda 3.1</a></li>
-                                    <li class="category-l2"><a href="#">honda 3.2</a></li>
-                                    <li class="category-l2"><a href="#">honda 3.3</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="category-l0"><a href="#">yamaha</a></li>
-                    <li class="category-l0"><a href="#">suzuki</a></li>
+                <ul class="level0">
+                    <jsp:useBean id="parentTpeList" scope="request" type="java.util.List"/>
+                    <jsp:useBean id="typeListByParentId" scope="request" type="java.util.List"/>
+                    <c:forEach items="${parentTpeList}" var="tpe">
+                        <li class="category-l0" about="${tpe.tpe_id}">
+                            <c:choose>
+                                <c:when test="${tpe.tpe_id == param.tpe_id}">
+                                    <a href="${pageContext.request.contextPath}/Category?brd_id=${tpe.brd_id}&tpe_id=">${tpe.tpe_name}
+                                        <i class="fa-solid fa-plus hide"></i>
+                                        <i class="fa-solid fa-minus"></i>
+                                    </a>
+                                    <ul class="level1">
+                                        <c:forEach items="${typeListByParentId}" var="subTpe">
+                                            <li class="category-l1"><a
+                                                    href="${pageContext.request.contextPath}/Category?brd_id=${subTpe.brd_id}&tpe_id=${subTpe.tpe_id}">${subTpe.tpe_name}</a>
+                                            </li>
+                                        </c:forEach>
+                                    </ul>
+                                </c:when>
+                                <c:otherwise>
+                                    <a href="${pageContext.request.contextPath}/Category?brd_id=${tpe.brd_id}&tpe_id=">${tpe.tpe_name}
+                                        <i class="fa-solid fa-plus"></i>
+                                        <i class="fa-solid fa-minus hide"></i>
+                                    </a>
+                                    <ul class="level1"></ul>
+                                </c:otherwise>
+                            </c:choose>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
             <div class="filter">
@@ -185,6 +182,7 @@
                 <option value="popular">mới nhất</option>
             </select>
         </label>
+
         <!-- cards container -->
         <div class="list-product">
 
@@ -193,13 +191,23 @@
                 <c:forEach items="${allProduct}" var="item">
                     <div class="product-card">
                         <div class="product-image">
-                            <span class="discount-tag"></span>
-                            <img src="" class="product-thumb" alt="">
-                            <button class="card-btn">Xem chi tiết</button>
+                            <c:if test="${item.prd_discountPercent > 0}">
+                                <span class="discount-tag">Giảm ${item.prd_discountPercent}%</span>
+                            </c:if>
+                            <img src="${item.prd_ava}" class="product-thumb" alt="">
+                            <button class="card-btn" onclick="window.location = '${pageContext.request.contextPath}/Product?prd_id=${item.prd_id}'">Xem chi tiết</button>
                         </div>
                         <div class="product-info">
-                            <h2 class="product-brand"></h2>
-                            <span class="price"><span class="actual-price"></span></span>
+                            <h2 class="product-brand">${item.prd_name}</h2>
+                            <c:choose>
+                                <c:when test="${item.prd_discountPercent == 0}">
+                                    <span class="price">${item.prd_price}đ</span>
+                                </c:when>
+                                <c:otherwise>
+                                    <span class="price">${item.prd_soldPrice}đ<span
+                                            class="actual-price">${item.prd_price}đ</span></span>
+                                </c:otherwise>
+                            </c:choose>
                         </div>
                     </div>
                 </c:forEach>
