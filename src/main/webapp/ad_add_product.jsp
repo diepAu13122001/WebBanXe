@@ -36,10 +36,10 @@
 				<button>Export file pdf</button>
 			</div>
 			<div>
-				<input class="form-control" type="text" placeholder="Tên sản phẩm">
-				<label for=""><br></label> <input class="form-control"
-					type="text" placeholder="Link ảnh đại diện của sản phẩm"> <label
-					for=""><br></label>
+				<input class="form-control" type="text" name="prd_name"
+					placeholder="Tên sản phẩm"> <label for=""><br></label>
+				<input class="form-control" type="text" name="prd_ava"
+					placeholder="Link ảnh đại diện của sản phẩm"> <label for=""><br></label>
 				<div class="by-color">
 					<label for="color">Mã nhãn hàng</label> <input list="brd_id"
 						id="color" />
@@ -66,14 +66,16 @@
 					</datalist>
 				</div>
 				<label for=""><br></label> <input class="form-control"
-					type="text" placeholder="Giá của sản phẩm"> <label for=""><br></label>
-				<input class="form-control" type="text"
+					type="text" name="prd_price" placeholder="Giá của sản phẩm">
+				<label for=""><br></label> <input class="form-control"
+					type="text" name="prd_discountPercent"
 					placeholder="Phần trăm giảm giá của sản phẩm"> <label
 					for=""><br></label> <input class="form-control" type="date"
-					placeholder="Ngày tạo ra sản phẩm"> <label for=""><br></label>
-				<input class="form-control" type="date"
+					name="prd_createdDate" placeholder="Ngày tạo ra sản phẩm">
+				<label for=""><br></label> <input class="form-control"
+					type="date" name="prd_lastEdit"
 					placeholder="Lần chỉnh sửa cuối cùng"> <label for=""><br></label>
-				<input class="form-control" type="text"
+				<input class="form-control" type="text" name="prd_status"
 					placeholder="Trạng thái của sản phẩm"> <label for=""><br></label>
 				<div class="by-color">
 					<label for="color">Mã nhân viên</label> <input list="adm_id"
@@ -88,7 +90,7 @@
 					</datalist>
 				</div>
 				<label for=""><br></label> <input class="form-control"
-					type="text" placeholder="Số lượng sản phẩm">
+					type="text" name="prd_quantity" placeholder="Số lượng sản phẩm">
 
 			</div>
 		</div>
