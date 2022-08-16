@@ -36,13 +36,14 @@
 				<button>Export file pdf</button>
 			</div>
 <div >
-<input class="form-control" type="text" placeholder="Name">
+<input class="form-control" type="text" placeholder="Link hình ảnh của web">
  <label for=""><br></label>
-<input class="form-control" type="password" placeholder="Password">
- <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Phone">
- <label for=""><br></label>
-<input class="form-control" type="email" placeholder="Mail">
+<input class="form-control" type="text" placeholder="Mô tả của hình ảnh">
+<label for=""><br></label>
+<input class="form-control" type="text" placeholder="Link liên kết của hình ảnh">
+<label for=""><br></label>
+<input class="form-control" type="text" placeholder="Loại hình ảnh">
+
 </div>
 		</div>
 	</div>

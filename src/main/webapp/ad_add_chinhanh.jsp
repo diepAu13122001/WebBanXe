@@ -28,7 +28,7 @@
 			</ul>
 		</div>
 		<!--    <div class="col-sm-3" style="position: relative; z-index: -1"></div>-->
-		<div class="col-sm-9" style="padding-left: 0">
+		<<div class="col-sm-9" style="padding-left: 0">
 			<jsp:include page="jsp/nav.jsp"/>
 			<div class="data-getting">
 				<button>Import file excel</button>
@@ -36,13 +36,16 @@
 				<button>Export file pdf</button>
 			</div>
 <div >
-<input class="form-control" type="text" placeholder="Name">
+<input class="form-control" type="text" placeholder="Name chi nhánh">
  <label for=""><br></label>
-<input class="form-control" type="password" placeholder="Password">
+<input class="form-control" type="password" placeholder="Địa chỉ chi nhánh">
  <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Phone">
+<input class="form-control" type="text" placeholder="Phone chi nhánh">
  <label for=""><br></label>
-<input class="form-control" type="email" placeholder="Mail">
+ <input class="form-control" type="time" placeholder="Giờ mở cửa" >
+  <label for=""><br></label>
+ <input class="form-control" type="time" placeholder="Giờ đóng cửa" >
+
 </div>
 		</div>
 	</div>

@@ -18,26 +18,20 @@
 </div>
 <div class="row">
     <div class="col-sm-3">
-        <ul>
-            <li class="category-l0">
-                <a href="#">Doanh thu</a>
-                <a href="#">Nhân viên</a>
-                <a href="#">Sản phẩm</a>
-                <a href="#">Mã giảm giá</a>
-                <a href="#">Chi nhánh</a>
-                <a href="#">Trang web</a>
-            </li>
-        </ul>
-    </div>
+			<ul>
+				<li class="category-l0"><a href="ad_home.jsp">Doanh thu</a> <a href="ad_nhanvien.jsp">Nhân
+						viên</a> <a href="ad_product.jsp">Sản phẩm</a> <a href="ad_discount.jsp">Mã giảm giá</a> <a
+					href="ad_chinhanh.jsp">Chi nhánh</a> <a href="ad_web.jsp">Trang web</a></li>
+			</ul>
+		</div>
     <!--    <div class="col-sm-3" style="position: relative; z-index: -1"></div>-->
     <div class="col-sm-9" style="padding-left: 0">
-        <input  class="hide" type="text" name="search" id="search-input" placeholder="Tìm kiếm...">
-        <button id="search-btn"><img src="https://img.icons8.com/ios-filled/60/000000/search--v1.png"/></button>
-        <div class="data-getting">
-            <button>Import file excel</button>
-            <button>Export file excel</button>
-            <button>Export file pdf</button>
-        </div>
+			<jsp:include page="jsp/nav.jsp"/>
+			<div class="data-getting">
+				<button>Import file excel</button>
+				<button>Export file excel</button>
+				<button>Export file pdf</button>
+			</div>
         <div class="revenue">
             <div class="overview">
                 <div class="review">

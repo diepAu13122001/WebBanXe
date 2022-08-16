@@ -27,12 +27,7 @@
 		</div>
 		<!--    <div class="col-sm-3" style="position: relative; z-index: -1"></div>-->
 		<div class="col-sm-9" style="padding-left: 0">
-			<input class="hide" type="text" name="search" id="search-input"
-				placeholder="Tìm kiếm...">
-			<button id="search-btn">
-				<img
-					src="https://img.icons8.com/ios-filled/60/000000/search--v1.png" />
-			</button>
+			<jsp:include page="jsp/nav.jsp"/>
 			<div class="data-getting">
 				<button>Import file excel</button>
 				<button>Export file excel</button>

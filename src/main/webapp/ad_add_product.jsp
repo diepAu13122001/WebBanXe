@@ -35,15 +35,67 @@
 				<button>Export file excel</button>
 				<button>Export file pdf</button>
 			</div>
-<div >
-<input class="form-control" type="text" placeholder="Name">
- <label for=""><br></label>
-<input class="form-control" type="password" placeholder="Password">
- <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Phone">
- <label for=""><br></label>
-<input class="form-control" type="email" placeholder="Mail">
-</div>
+			<div>
+				<input class="form-control" type="text" placeholder="Tên sản phẩm">
+				<label for=""><br></label> 
+				<input class="form-control"
+					type="text" placeholder="Link ảnh đại diện của sản phẩm"> 
+					<label
+					for=""><br></label>
+				<div class="by-color">
+					<label for="color">Màu sắc</label> <select id="color">
+						<option value="color" disabled selected>Mã nhãn hàng</option>
+						<option value="color1">Màu hồng</option>
+						<option value="color1">Màu hồng</option>
+						<option value="color1">Màu hồng</option>
+						<option value="color1">Màu hồng</option>
+					</select>
+				</div>
+				<label for=""><br></label>
+				<div class="by-color">
+					<label for="color">Màu sắc</label> <select id="color">
+						<option value="color" disabled selected>Mã loại mặt hàng</option>
+						<option value="color1">Màu hồng</option>
+						<option value="color1">Màu hồng</option>
+						<option value="color1">Màu hồng</option>
+						<option value="color1">Màu hồng</option>
+					</select>
+				</div>
+				<label for=""><br></label> 
+				<input class="form-control"
+					type="text" placeholder="Giá của sản phẩm"> 
+					<label
+					for=""><br></label> 
+					<input class="form-control" type="text"
+					placeholder="Phần trăm giảm giá của sản phẩm">
+					<label
+					for=""><br></label> 
+					<input class="form-control" type="date"
+					placeholder="Ngày tạo ra sản phẩm">
+					<label
+					for=""><br></label> 
+					<input class="form-control" type="date"
+					placeholder="Lần chỉnh sửa cuối cùng">
+					<label
+					for=""><br></label> 
+					<input class="form-control" type="text"
+					placeholder="Trạng thái của sản phẩm">
+					<label for=""><br></label>
+				<div class="by-color">
+					<label for="color">Màu sắc</label> <select id="color">
+						<option value="color" disabled selected>Mã nhân viên</option>
+						<option value="color1">Màu hồng</option>
+						<option value="color1">Màu hồng</option>
+						<option value="color1">Màu hồng</option>
+						<option value="color1">Màu hồng</option>
+					</select>
+				</div>
+					<label
+					for=""><br></label> 
+					<input class="form-control" type="text"
+					placeholder="Số lượng sản phẩm">
+
+			</div>
 		</div>
 	</div>
 	</div>

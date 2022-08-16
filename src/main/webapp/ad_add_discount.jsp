@@ -36,13 +36,19 @@
 				<button>Export file pdf</button>
 			</div>
 <div >
-<input class="form-control" type="text" placeholder="Name">
+<input class="form-control" type="text" placeholder="Tên chương trình">
  <label for=""><br></label>
-<input class="form-control" type="password" placeholder="Password">
+<input class="form-control" type="date" placeholder="Ngày bắt đầu">
  <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Phone">
+<input class="form-control" type="date" placeholder="Ngày kết thúc">
  <label for=""><br></label>
-<input class="form-control" type="email" placeholder="Mail">
+<input class="form-control" type="text" placeholder="Giá trị giảm tối đa">
+<label for=""><br></label>
+<input class="form-control" type="text" placeholder="Giá trị đơn hàng tối thiểu">
+<label for=""><br></label>
+<input class="form-control" type="text" placeholder="Phần trăm giảm trên tổng đơn hàng">
+<label for=""><br></label>
+<input class="form-control" type="text" placeholder="Nhận biết mã giảm chi phí giao hàng">
 </div>
 		</div>
 	</div>
