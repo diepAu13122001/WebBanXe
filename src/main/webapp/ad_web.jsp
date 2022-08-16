@@ -57,7 +57,7 @@
 						<td>email</td>
 					
 
-						<td><a href="#">Sửa</a></td>
+						<td><a href="ad_add_web.jsp">Sửa</a></td>
 					</tr>
 					<tr>
 						<td><input type="checkbox" id="select-all" name="selected">
@@ -68,7 +68,7 @@
 						<td>email</td>
 						<td>email</td>
 						
-						<td><a href="#">Sửa</a></td>
+						<td><a href="ad_add_web.jsp">Sửa</a></td>
 					</tr>
 				</table>
 			</div>

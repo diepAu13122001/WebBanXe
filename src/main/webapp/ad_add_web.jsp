@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin nhan vien</title>
+<title>Add web</title>
 <link rel="stylesheet" href="css/nav.css">
 <link rel="stylesheet" href="css/brand.css">
 <link rel="stylesheet" href="css/home.css">
@@ -36,13 +36,13 @@
 				<button>Export file pdf</button>
 			</div>
 <div >
-<input class="form-control" type="text" placeholder="Link hình ảnh của web">
+<input class="form-control" name="pic_url" type="text" placeholder="Link hình ảnh của web">
  <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Mô tả của hình ảnh">
+<input class="form-control" name="pic_alt" type="text" placeholder="Mô tả của hình ảnh">
 <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Link liên kết của hình ảnh">
+<input class="form-control" name="pic_linkToPage" type="text" placeholder="Link liên kết của hình ảnh">
 <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Loại hình ảnh">
+<input class="form-control" name="pic_type" type="text" placeholder="Loại hình ảnh">
 
 </div>
 		</div>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin nhan vien</title>
+<title>Add nhan vien</title>
 <link rel="stylesheet" href="css/nav.css">
 <link rel="stylesheet" href="css/brand.css">
 <link rel="stylesheet" href="css/home.css">
@@ -36,13 +36,13 @@
 				<button>Export file pdf</button>
 			</div>
 <div >
-<input class="form-control" type="text" placeholder="Name">
+<input class="form-control" type="text"  name="adm_name" placeholder="Name">
  <label for=""><br></label>
-<input class="form-control" type="password" placeholder="Password">
+<input class="form-control" type="password" name="adm_password" placeholder="Password">
  <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Phone">
+<input class="form-control" type="text" name="adm_phoneNum"  placeholder="Phone">
  <label for=""><br></label>
-<input class="form-control" type="email" placeholder="Mail">
+<input class="form-control" type="email" name="adm_mailAddress" placeholder="Mail">
 </div>
 		</div>
 	</div>

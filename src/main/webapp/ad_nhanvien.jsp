@@ -20,14 +20,16 @@
 	<div class="row">
 		<div class="col-sm-3">
 			<ul>
-				 <li class="category-l0"><a href="ad_home.jsp">Doanh thu</a> <a href="ad_nhanvien.jsp">Nhân
-						viên</a> <a href="ad_product.jsp">Sản phẩm</a> <a href="ad_discount.jsp">Mã giảm giá</a> <a
-					href="ad_chinhanh.jsp">Chi nhánh</a> <a href="ad_web.jsp">Trang web</a></li>
+				<li class="category-l0"><a href="ad_home.jsp">Doanh thu</a> <a
+					href="ad_nhanvien.jsp">Nhân viên</a> <a href="ad_product.jsp">Sản
+						phẩm</a> <a href="ad_discount.jsp">Mã giảm giá</a> <a
+					href="ad_chinhanh.jsp">Chi nhánh</a> <a href="ad_web.jsp">Trang
+						web</a></li>
 			</ul>
 		</div>
 		<!--    <div class="col-sm-3" style="position: relative; z-index: -1"></div>-->
 		<div class="col-sm-9" style="padding-left: 0">
-			<jsp:include page="jsp/nav.jsp"/>
+			<jsp:include page="jsp/nav.jsp" />
 			<div class="data-getting">
 				<button>Import file excel</button>
 				<button>Export file excel</button>
@@ -54,7 +56,7 @@
 						<td>email</td>
 						<td>email</td>
 						<td>email</td>
-						<td><a href="#">Sửa</a></td>
+						<td><a href="ad_add_admin.jsp">Sửa</a></td>
 					</tr>
 					<tr>
 						<td><input type="checkbox" id="select-all" name="selected">
@@ -64,7 +66,7 @@
 						<td>email</td>
 						<td>email</td>
 						<td>email</td>
-						<td><a href="#">Sửa</a></td>
+						<td><a href="ad_add_admin.jsp">Sửa</a></td>
 					</tr>
 				</table>
 			</div>

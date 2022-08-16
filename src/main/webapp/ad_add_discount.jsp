@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin nhan vien</title>
+<title>Add discount</title>
 <link rel="stylesheet" href="css/nav.css">
 <link rel="stylesheet" href="css/brand.css">
 <link rel="stylesheet" href="css/home.css">
@@ -36,19 +36,19 @@
 				<button>Export file pdf</button>
 			</div>
 <div >
-<input class="form-control" type="text" placeholder="Tên chương trình">
+<input class="form-control" type="text" name="dsc_name" placeholder="Tên chương trình">
  <label for=""><br></label>
-<input class="form-control" type="date" placeholder="Ngày bắt đầu">
+<input class="form-control" type="date" name="dsc_startedDate" placeholder="Ngày bắt đầu">
  <label for=""><br></label>
-<input class="form-control" type="date" placeholder="Ngày kết thúc">
+<input class="form-control" type="date" name="dsc_endedDate " placeholder="Ngày kết thúc">
  <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Giá trị giảm tối đa">
+<input class="form-control" type="text" name="dsc_maxDiscount" placeholder="Giá trị giảm tối đa">
 <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Giá trị đơn hàng tối thiểu">
+<input class="form-control" type="text" name="dsc_minBillVal" placeholder="Giá trị đơn hàng tối thiểu">
 <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Phần trăm giảm trên tổng đơn hàng">
+<input class="form-control" type="text" name="dsc_percentOff" placeholder="Phần trăm giảm trên tổng đơn hàng">
 <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Nhận biết mã giảm chi phí giao hàng">
+<input class="form-control" type="text" name="dsc_isShipDiscount" placeholder="Nhận biết mã giảm chi phí giao hàng">
 </div>
 		</div>
 	</div>

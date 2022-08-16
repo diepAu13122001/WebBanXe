@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin nhan vien</title>
+<title>ADD chi nhanh</title>
 <link rel="stylesheet" href="css/nav.css">
 <link rel="stylesheet" href="css/brand.css">
 <link rel="stylesheet" href="css/home.css">
@@ -36,15 +36,15 @@
 				<button>Export file pdf</button>
 			</div>
 <div >
-<input class="form-control" type="text" placeholder="Name chi nhánh">
+<input class="form-control" type="text" name="shr_name" placeholder="Name chi nhánh">
  <label for=""><br></label>
-<input class="form-control" type="password" placeholder="Địa chỉ chi nhánh">
+<input class="form-control" type="password" name="shr_address" placeholder="Địa chỉ chi nhánh">
  <label for=""><br></label>
-<input class="form-control" type="text" placeholder="Phone chi nhánh">
+<input class="form-control" type="text" name="shr_phoneNum" placeholder="Phone chi nhánh">
  <label for=""><br></label>
- <input class="form-control" type="time" placeholder="Giờ mở cửa" >
+ <input class="form-control" type="time" name="shr_openTime" placeholder="Giờ mở cửa" >
   <label for=""><br></label>
- <input class="form-control" type="time" placeholder="Giờ đóng cửa" >
+ <input class="form-control" type="time" name="shr_closeTime" placeholder="Giờ đóng cửa" >
 
 </div>
 		</div>
