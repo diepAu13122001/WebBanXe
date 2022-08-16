@@ -45,6 +45,11 @@
 						<td>tpe_id</td>
 						<td>prd_price</td>
 						<td>prd_discountPercent</td>
+						<td>prd_createdDate</td>
+						<td>prd_lastEdit</td>
+						<td>prd_status</td>
+						<td>adm_id</td>
+						<td>prd_quantity</td>
 						<td></td>
 
 					</tr>
@@ -58,12 +63,22 @@
 						<td>email</td>
 						<td>email</td>
 						<td>email</td>
+						<td>email</td>
+						<td>email</td>
+						<td>email</td>
+						<td>email</td>
+						<td>email</td>
 
 						<td><a href="ad_add_product.jsp">Sửa</a></td>
 					</tr>
 					<tr>
 						<td><input type="checkbox" id="select-all" name="selected">
 						</td>
+						<td>email</td>
+						<td>email</td>
+						<td>email</td>
+						<td>email</td>
+						<td>email</td>
 						<td>email</td>
 						<td>email</td>
 						<td>email</td>
