@@ -43,7 +43,7 @@
 					<label
 					for=""><br></label>
 				<div class="by-color">
-					<label for="color">Màu sắc</label> <select id="color">
+					<label for="color">Mã nhãn hàng</label> <select id="color">
 						<option value="color" disabled selected>Mã nhãn hàng</option>
 						<option value="color1">Màu hồng</option>
 						<option value="color1">Màu hồng</option>
@@ -53,7 +53,7 @@
 				</div>
 				<label for=""><br></label>
 				<div class="by-color">
-					<label for="color">Màu sắc</label> <select id="color">
+					<label for="color">Mã loại mặt hàng</label> <select id="color">
 						<option value="color" disabled selected>Mã loại mặt hàng</option>
 						<option value="color1">Màu hồng</option>
 						<option value="color1">Màu hồng</option>
@@ -81,15 +81,8 @@
 					<input class="form-control" type="text"
 					placeholder="Trạng thái của sản phẩm">
 					<label for=""><br></label>
-				<div class="by-color">
-					<label for="color">Màu sắc</label> <select id="color">
-						<option value="color" disabled selected>Mã nhân viên</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-					</select>
-				</div>
+				<input class="form-control" type="text"
+					placeholder="Màu sắc">
 					<label
 					for=""><br></label> 
 					<input class="form-control" type="text"
