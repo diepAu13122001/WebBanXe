@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin nhan vien</title>
+<title>Add product</title>
 <link rel="stylesheet" href="css/nav.css">
 <link rel="stylesheet" href="css/brand.css">
 <link rel="stylesheet" href="css/home.css">
@@ -29,7 +29,7 @@
 		</div>
 		<!--    <div class="col-sm-3" style="position: relative; z-index: -1"></div>-->
 		<div class="col-sm-9" style="padding-left: 0">
-			<jsp:include page="jsp/nav.jsp"/>
+			<jsp:include page="jsp/nav.jsp" />
 			<div class="data-getting">
 				<button>Import file excel</button>
 				<button>Export file excel</button>
@@ -37,63 +37,58 @@
 			</div>
 			<div>
 				<input class="form-control" type="text" placeholder="Tên sản phẩm">
-				<label for=""><br></label> 
-				<input class="form-control"
-					type="text" placeholder="Link ảnh đại diện của sản phẩm"> 
-					<label
+				<label for=""><br></label> <input class="form-control"
+					type="text" placeholder="Link ảnh đại diện của sản phẩm"> <label
 					for=""><br></label>
 				<div class="by-color">
-					<label for="color">Màu sắc</label> <select id="color">
-						<option value="color" disabled selected>Mã nhãn hàng</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-					</select>
+					<label for="color">Mã nhãn hàng</label> <input list="brd_id"
+						id="color" />
+
+					<datalist id="brd_id">
+						<option value="Email">
+						<option value="email">
+						<option value="eamil">
+						<option value="nhanvien">
+						<option value="nhanhang">
+					</datalist>
 				</div>
 				<label for=""><br></label>
 				<div class="by-color">
-					<label for="color">Màu sắc</label> <select id="color">
-						<option value="color" disabled selected>Mã loại mặt hàng</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-					</select>
+					<label for="color">Loại mặt hàng</label> <input list="tpe_id"
+						id="color" />
+
+					<datalist id="tpe_id">
+						<option value="Email">
+						<option value="email">
+						<option value="eamil">
+						<option value="nhanvien">
+						<option value="nhanhang">
+					</datalist>
 				</div>
-				<label for=""><br></label> 
-				<input class="form-control"
-					type="text" placeholder="Giá của sản phẩm"> 
-					<label
-					for=""><br></label> 
-					<input class="form-control" type="text"
-					placeholder="Phần trăm giảm giá của sản phẩm">
-					<label
-					for=""><br></label> 
-					<input class="form-control" type="date"
-					placeholder="Ngày tạo ra sản phẩm">
-					<label
-					for=""><br></label> 
-					<input class="form-control" type="date"
-					placeholder="Lần chỉnh sửa cuối cùng">
-					<label
-					for=""><br></label> 
-					<input class="form-control" type="text"
-					placeholder="Trạng thái của sản phẩm">
-					<label for=""><br></label>
+				<label for=""><br></label> <input class="form-control"
+					type="text" placeholder="Giá của sản phẩm"> <label for=""><br></label>
+				<input class="form-control" type="text"
+					placeholder="Phần trăm giảm giá của sản phẩm"> <label
+					for=""><br></label> <input class="form-control" type="date"
+					placeholder="Ngày tạo ra sản phẩm"> <label for=""><br></label>
+				<input class="form-control" type="date"
+					placeholder="Lần chỉnh sửa cuối cùng"> <label for=""><br></label>
+				<input class="form-control" type="text"
+					placeholder="Trạng thái của sản phẩm"> <label for=""><br></label>
 				<div class="by-color">
-					<label for="color">Màu sắc</label> <select id="color">
-						<option value="color" disabled selected>Mã nhân viên</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-						<option value="color1">Màu hồng</option>
-					</select>
+					<label for="color">Mã nhân viên</label> <input list="adm_id"
+						id="color" />
+
+					<datalist id="adm_id">
+						<option value="Email">
+						<option value="email">
+						<option value="eamil">
+						<option value="nhanvien">
+						<option value="nhanhang">
+					</datalist>
 				</div>
-					<label
-					for=""><br></label> 
-					<input class="form-control" type="text"
-					placeholder="Số lượng sản phẩm">
+				<label for=""><br></label> <input class="form-control"
+					type="text" placeholder="Số lượng sản phẩm">
 
 			</div>
 		</div>
